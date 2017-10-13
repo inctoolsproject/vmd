@@ -13,7 +13,7 @@ First :
 
 Using git :
 
-    $ git clone http://github.com/bamzky/vodkamod
+    $ git clone http://github.com/initialaf/vmod.git
 
 Python packages :
 
@@ -40,4 +40,4 @@ Merk Kremont / [@merkremont](https://twitter.com/merkremont)
 Mod
 ---
 
-Version Mod : 1.9.4b - Mod By Bamzky / [@bamaseptituta_](https://instagram.com/bamaseptituta_)
+Version Mod : 1.9.8b - Mod By Bamzky / [@bamaseptituta_](https://instagram.com/bamaseptituta_)
