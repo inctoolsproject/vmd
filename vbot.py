@@ -16,48 +16,12 @@ offbot, messageReq, wordsArray, waitingAnswer = [], {}, {}, {}
 
 print client._loginresult()
 
-helpMessage ="""「lἶῆპ ძპὗპlõρპΓჰ」
---------------------------------------------------
-【βåɱžķÿ β¤țž】
-Help Command:
-[seţ]
-[siďer]
-[ʍe]
-[ʍid]
-[ǥid]
-[ǥinfo]
-[ţime]
-[þuka]
-[ţutup]
-[µrl]
-[ȿpeed]
-[μp]
-[ţagall]
-[ȼancel]
-[Ğn 「Nama」]
-[ɨnvite:「By Mid」
-[ȿhow:「By Mid」
-[яename:「Ganti Nama Profile」]
-
-Help Command 「Kicker Only」:
-[ɲk「By Tag」]
-[мulai]
-[µni]
-
-Based on : Vodka
-Link : http://github.com/merkremont/LineVodka
-Support By : Line Developers
-Modding By : Bamzky
-Version Mod : 2.0.3beta
-"""
-
 wait = {
     'readPoint':{},
     'readMember':{},
     'setTime':{},
     'ROM':{},
     'ProtectQR':False,
-    "lang":"JP",
   #  "Protectguest":False,
   #  "Protectcancel":False,
   #  "protectionOn":True,	
@@ -214,10 +178,7 @@ def SEND_MESSAGE(op):
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if "help" in msg.text:
-		    if wait["lang"] == "JP":
-			client.sendMessage(msg.to,helpMessage)
-		    else:
-			client.sendMessage(msg.to,helpt)
+	       	    sendMessage(msg.to,"「Łɨɲƹ ȡƹ˅ƹŁǿρƹřȿ þǿƮȿ」\n--------------------------------------------------\n【βåɱžķÿ β¤țž】\nHelp Command:\n[seţ] : Untuk Meng-set ReadPoint\n[siďer] : Untuk Membaca ReadPoint\n[ʍe] : Meng-send Kontak Sendiri\n[ʍid] : Untuk Melihat Id Sendiri\n[ǥid] : Untuk Melihat Id Grup\n[ǥinfo] : Untuk Melihat Info Grup\n[ţime] : Untuk Melihat Waktu Sekarang\n[þuka] : Untuk Membuka URL\n[ţutup] : Untuk Menutup URL\n[µrl] : Untuk Menampilkan URL\n[ȿpeed] : Untuk Melihat Kecepatan Bot\n[μp] : Untuk Meng-up Pesan\n[ţagall] : Untuk Men-tag Semua Anggota Grup\n[ȼancel] : Untuk Meng-cancel Semua Undangan Grup\n[Ğn 「Nama」] : Untuk Mengganti Nama Grup\n[ɨnvite:「By Mid」 : Meng-Invite Orang Dengan Mid\n[ȿhow:「By Mid」 : Mengirim Kontak Melalui Mid\n[яename:「Ganti Nama Profile」] : Untuk Mengganti Nama Sendiri\n\nHelp Command 「Kicker Only」:\n[ɲk「By Tag」] : Meng-kick Orang Dengan Tag\n[мulai] : Untuk Membersihkan Anggota Grup\n[µni] : Untuk Meng-send Unicode\n\nBased on : Vodka\nLink : http://github.com/merkremont/LineVodka\nSupport By : Line Developers\nModding By : Bamzky\nVersion Mod : 2.0.3beta\n\n【βåɱžķÿ β¤țž】\n--------------------------------------------------\n「Łɨɲƹ ȡƹ˅ƹŁǿρƹřȿ þǿƮȿ」")
 		if "Gn " in msg.text:
 		    if msg.toType == 2:
 			X = client.getGroup(msg.to)
