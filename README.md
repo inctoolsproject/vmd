@@ -1,5 +1,5 @@
 # Vodka Mod By Bamzky
-_Vodka Mod By Bamzky..._
+_This Is A New Version Of Line Vodka_
 
 Tutorial
 ------
@@ -40,4 +40,4 @@ Merk Kremont / [@merkremont](https://twitter.com/merkremont)
 Mod
 ---
 
-Version Mod : 1.9.8b - Mod By Bamzky / [@bamaseptituta_](https://instagram.com/bamaseptituta_)
+Version Mod : 2.0.3b - Mod By Bamzky / [@bamaseptituta_](https://instagram.com/bamaseptituta_)
