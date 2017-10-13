@@ -16,12 +16,48 @@ offbot, messageReq, wordsArray, waitingAnswer = [], {}, {}, {}
 
 print client._loginresult()
 
+helpMessage:"""「lἶῆპ ძპὗპlõρპΓჰ」
+--------------------------------------------------
+【βåɱžķÿ β¤țž】
+Help Command:
+[seţ]
+[siďer]
+[ʍe]
+[ʍid]
+[ǥid]
+[ǥinfo]
+[ţime]
+[þuka]
+[ţutup]
+[µrl]
+[ȿpeed]
+[μp]
+[ţagall]
+[ȼancel]
+[Ğn 「Nama」]
+[ɨnvite:「By Mid」
+[ȿhow:「By Mid」
+[яename:「Ganti Nama Profile」]
+
+Help Command 「Kicker Only」:
+[ɲk「By Tag」]
+[мulai]
+[µni]
+
+Based on : Vodka
+Link : http://github.com/merkremont/LineVodka
+Support By : Line Developers
+Modding By : Bamzky
+Version Mod : 2.0.3beta
+"""
+
 wait = {
     'readPoint':{},
     'readMember':{},
     'setTime':{},
     'ROM':{},
-    'ProtectQR':False
+    'ProtectQR':False,
+    "lang":"JP",
   #  "Protectguest":False,
   #  "Protectcancel":False,
   #  "protectionOn":True,	
@@ -177,9 +213,12 @@ def SEND_MESSAGE(op):
                     if group.invitee is None: md += "\nJumlah Member : " + str(len(group.members)) + "\n\nUndangan Yang Belum Diterima : 0 Orang"
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
-		if msg.text == "help":
-		    sendMessage(msg.to,"๑۞๑,¸¸,ø¤º°`°๑۩ βåɱžķÿ β¤țž ๑۩ ,¸¸,ø¤º°`°๑۞๑ \n--------------------------------------------------\nBamzky Botz Help: \n\n[Command :] \n[seţ] \n[siďer] \n[ʍe] \n[ʍid] \n[ǥid] \n[ǥinfo] \n[ţime] \n[þuka] \n[ţutup] \n[µrl] \n[ȿpeed] \n[μp] \n[ţagall] \n[ȼancel] \n[Ğn 「Nama」] \n[ɨnvite:「By Mid」 \n[ȿhow:「By Mid」 \n\n[Command Kicker:] \n[ɲk「By Tag」] \n[мulai] \n[µni] \n\nBased on : Vodka \nLink : http://github.com/merkremont/LineVodka \nSupport By : Line Developers \nModding By : Bamzky  \n--------------------------------------------------\n๑۞๑,¸¸,ø¤º°`°๑۩ βåɱžķÿ β¤țž ๑۩ ,¸¸,ø¤º°`°๑۞๑")
-                if "Gn " in msg.text:
+		if "help" in msg.text:
+		    if wait["lang"] == "JP":
+			client.sendMessage(msg.to,helpMessage)
+		    else:
+			client.sendMessage(msg.to,helpt)
+		if "Gn " in msg.text:
 		    if msg.toType == 2:
 			X = client.getGroup(msg.to)
 			X.name = msg.text.replace("Gn ","")
