@@ -21,10 +21,10 @@ wait = {
     'readMember':{},
     'setTime':{},
     'ROM':{},
-    'ProtectQR':False,
-    "Protectguest":False,
-    "Protectcancel":False,
-    "protectionOn":True,	
+    'ProtectQR':False
+  #  "Protectguest":False,
+  #  "Protectcancel":False,
+  #  "protectionOn":True,	
    }
 
 setTime = {}
@@ -40,10 +40,10 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
         messageReq[to] = -1
     messageReq[to] += 1
     client._client.sendMessage(messageReq[to], mes)
-
+	
 def NOTIFIED_ADD_CONTACT(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param1).displayName + "Makasih udah diadd")
+        sendMessage(op.param1, client.getContact(op.param1).displayName + "Thanks udah ngeadd :* ")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ADD_CONTACT\n\n")
@@ -54,7 +54,7 @@ tracer.addOpInterrupt(5,NOTIFIED_ADD_CONTACT)
 def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     #print op
     try:
-        sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang\nJangan Lupa Cek Note, Ga cek note awas aja 􀜁􀅔Har Har􏿿")
+        sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang\nJangan Lupa Cek Note :) ")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
@@ -64,7 +64,8 @@ tracer.addOpInterrupt(17,NOTIFIED_ACCEPT_GROUP_INVITATION)
 
 def NOTIFIED_KICKOUT_FROM_GROUP(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param3).displayName + " Kasian anjir dikick 􀜁􀅔Har Har􏿿 ")
+	client.kickoutFromGroup(op.param1,[op.param2])
+	sendMessage(op.param1, client.getContact(op.param3).displayName + " Eh Kasian anjir dia dikick 􀜁􀅔Har Har􏿿")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_KICKOUT_FROM_GROUP\n\n")
@@ -74,13 +75,23 @@ tracer.addOpInterrupt(19,NOTIFIED_KICKOUT_FROM_GROUP)
 
 def NOTIFIED_LEAVE_GROUP(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param2).displayName + " Dada! Jan kangen, kangen awas :v\nKalo kangen nanti gua baper oy 􀜁􀅔Har Har􏿿 ")
+        sendMessage(op.param1, client.getContact(op.param2).displayName + " Dada! Jangan kangen ya 􀜁􀅔Har Har􏿿")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_LEAVE_GROUP\n\n")
         return
 
 tracer.addOpInterrupt(15,NOTIFIED_LEAVE_GROUP)
+
+def NOTIFIED_CANCEL_INVITATION_GROUP(op):
+    try:
+        client.kickoutFromGroup(op.param1,[op.param2])
+    except Exception as e:
+        print e
+        print ("\n\nNOTIFIED_CANCEL_INVITATION_GROUP\n\n")
+        return
+
+tracer.addOpInterrupt(32,NOTIFIED_CANCEL_INVITATION_GROUP)
 
 def CANCEL_INVITATION_GROUP(op):
     try:
@@ -137,6 +148,7 @@ def SEND_MESSAGE(op):
     try:
         if msg.toType == 0:
             if msg.contentType == 0:
+#-----------------------------------------------------------------------------------------------------------------------------------
                 if msg.text == "mid":
                     sendMessage(msg.to, msg.to)
                 if msg.text == "me":
@@ -166,7 +178,7 @@ def SEND_MESSAGE(op):
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if msg.text == "help":
-		            sendMessage(msg.to,"๑۞๑,¸¸,ø¤º°`°๑۩ βåɱžķÿ β¤țž ๑۩ ,¸¸,ø¤º°`°๑۞๑ \n--------------------------------------------------\nBamzky Botz Help: \n\n[Command :] \n[seţ] \n[siďer] \n[ʍe] \n[ʍid] \n[ǥid] \n[ǥinfo] \n[ţime] \n[þuka] \n[ţutup] \n[µrl] \n[ȿpeed] \n[μp] \n[ţagall] \n[ȼancel] \n[Ğn 「Nama」] \n[ɨnvite:「By Mid」 \n[ȿhow:「By Mid」 \n\n[Command Kicker:] \n[ɲk「By Tag」] \n[мulai] \n[µni] \n\nBased on : Vodka \nLink : http://github.com/merkremont/LineVodka \nSupport By : Line Developers \nModding By : Bamzky  \n--------------------------------------------------\n๑۞๑,¸¸,ø¤º°`°๑۩ βåɱžķÿ β¤țž ๑۩ ,¸¸,ø¤º°`°๑۞๑")
+		    sendMessage(msg.to,"๑۞๑,¸¸,ø¤º°`°๑۩ βåɱžķÿ β¤țž ๑۩ ,¸¸,ø¤º°`°๑۞๑ \n--------------------------------------------------\nBamzky Botz Help: \n\n[Command :] \n[seţ] \n[siďer] \n[ʍe] \n[ʍid] \n[ǥid] \n[ǥinfo] \n[ţime] \n[þuka] \n[ţutup] \n[µrl] \n[ȿpeed] \n[μp] \n[ţagall] \n[ȼancel] \n[Ğn 「Nama」] \n[ɨnvite:「By Mid」 \n[ȿhow:「By Mid」 \n\n[Command Kicker:] \n[ɲk「By Tag」] \n[мulai] \n[µni] \n\nBased on : Vodka \nLink : http://github.com/merkremont/LineVodka \nSupport By : Line Developers \nModding By : Bamzky  \n--------------------------------------------------\n๑۞๑,¸¸,ø¤º°`°๑۩ βåɱžķÿ β¤țž ๑۩ ,¸¸,ø¤º°`°๑۞๑")
                 if "Gn " in msg.text:
 		    if msg.toType == 2:
 			X = client.getGroup(msg.to)
@@ -246,7 +258,7 @@ def SEND_MESSAGE(op):
                         client.cancelGroupInvitation(msg.to, gInviMids)
                         sendMessage(msg.to, str(len(group.invitee)) + " Yang udah dicancel yak")	
 		if "rename:" in msg.text:
-                    string = msg.text.replace("rename ","")
+                    string = msg.text.replace("rename:","")
                     if len(string.decode('utf-8')) <= 20:
                         profile_B = client.getProfile()
                         profile_B.displayName = string
@@ -274,6 +286,25 @@ def SEND_MESSAGE(op):
                                 print (msg.to,[g.mid])
                             except:
                                 sendMessage(msg.to,"Grup Dibersihkan")
+		if "info @ " in msg.text:
+                    if msg.contentType == 0:
+		        _name = msg.text.replace("info @","")
+			_nametarget = _name.rstrip('  ')
+                        client.sendMessage(msg.to,msg.contentMetadata["mid"])
+                        if 'displayName' in msg.contentMetadata:
+			    contact = client.getContact(msg.contentMetadata["mid"])
+                            try:
+                                cu = client.channel.getCover(msg.contentMetadata["mid"])
+                            except:
+                                cu = ""
+                            client.sendMessage(msg.to,"[Nama Profil]:\n" + msg.contentMetadata["displayName"] + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(cu))
+                        else:
+                            contact = client.getContact(msg.contentMetadata["mid"])
+                            try:
+                                cu = client.channel.getCover(msg.contentMetadata["mid"])
+                            except:
+                                cu = ""
+                            client.sendMessage(msg.to,"[Nama Profil]:\n" + contact.displayName + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(cu))
 		if msg.text == "speed":
                     start = time.time()
                     sendMessage(msg.to, "Processing...")
@@ -317,7 +348,7 @@ def SEND_MESSAGE(op):
 		    try:
 		        client.sendMessage(msg)
 		    except Exception as error:
-			print error	
+			    print error	
                 if msg.text == "time":
                     sendMessage(msg.to, "Tanggal sekarang = " + datetime.datetime.today().strftime('%d-%m-%y'))
 		    sendMessage(msg.to, "Waktu sekarang = " + datetime.datetime.today().strftime('%H:%M:%S'))
@@ -353,6 +384,7 @@ def SEND_MESSAGE(op):
         else:
             pass
 
+#-----------------------------------------------------------------------------------------------------------------------------------
     except Exception as e:
         print e
         print ("\n\nSEND_MESSAGE\n\n")
