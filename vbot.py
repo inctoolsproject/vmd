@@ -264,6 +264,7 @@ def SEND_MESSAGE(op):
                         profile_B.displayName = string
                         client.updateProfile(profile_B)
                         client.sendMessage(msg.to,"name " + string + " done")
+			sendMessage(mgs.to,"Udah diganti namanya, coba cek 􀜁􀅔Har Har􏿿")
 		if msg.text == "Mulai":
                     print "Cleaning Member....."
                     _name = msg.text.replace("Mulai","")
@@ -286,7 +287,7 @@ def SEND_MESSAGE(op):
                                 print (msg.to,[g.mid])
                             except:
                                 sendMessage(msg.to,"Grup Dibersihkan")
-		if "info @ " in msg.text:
+		if "info @" in msg.text:
                     if msg.contentType == 0:
 		        _name = msg.text.replace("info @","")
 			_nametarget = _name.rstrip('  ')
@@ -294,17 +295,17 @@ def SEND_MESSAGE(op):
                         if 'displayName' in msg.contentMetadata:
 			    contact = client.getContact(msg.contentMetadata["mid"])
                             try:
-                                cu = client.channel.getCover(msg.contentMetadata["mid"])
+                                contact = client.channel.getCover(msg.contentMetadata["mid"])
                             except:
-                                cu = ""
-                            client.sendMessage(msg.to,"[Nama Profil]:\n" + msg.contentMetadata["displayName"] + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(cu))
+                                contact = ""
+                            client.sendMessage(msg.to,"[Nama Profil]:\n" + msg.contentMetadata["displayName"] + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(contact))
                         else:
                             contact = client.getContact(msg.contentMetadata["mid"])
                             try:
-                                cu = client.channel.getCover(msg.contentMetadata["mid"])
+                                contact = client.channel.getCover(msg.contentMetadata["mid"])
                             except:
-                                cu = ""
-                            client.sendMessage(msg.to,"[Nama Profil]:\n" + contact.displayName + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(cu))
+                                contact = ""
+                            client.sendMessage(msg.to,"[Nama Profil]:\n" + contact.displayName + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(contact))
 		if msg.text == "speed":
                     start = time.time()
                     sendMessage(msg.to, "Processing...")
