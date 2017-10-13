@@ -16,7 +16,7 @@ offbot, messageReq, wordsArray, waitingAnswer = [], {}, {}, {}
 
 print client._loginresult()
 
-helpMessage:"""「lἶῆპ ძპὗპlõρპΓჰ」
+helpMessage ="""「lἶῆპ ძპὗპlõρპΓჰ」
 --------------------------------------------------
 【βåɱžķÿ β¤țž】
 Help Command:
