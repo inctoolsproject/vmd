@@ -31,14 +31,15 @@ class LineClient(LineApi):
     @loggedIn
     def _loginresult(self):
         if self.isLogin == True:
-            print "\nBotProtect\nMade by Farzain - zFz\nKalau mau di-edit, silahkan\nini juga pake LineVodka dari Merkremont\n"
-            print "authToken : " + self.authToken + "\n"
-            print "certificate : " + self.certificate + "\n"
+            print "\nVodkamod-Bot\n"
+            print "-------------------------------------------------\nCredit :\nBot ini berdasarkan dari script LineVodka\nmilik merkremont dan di modding oleh Bamzky,\nOleh sebab itu jika mau mengedit botnya\nharap izin dulu ke\nid line : bamaseptituta\n\nTerima Kasih,\nBamzky\n-------------------------------------------------\n"
+            print "Kode Token : " + self.authToken + "\n"
+            print "Sertifikat : " + self.certificate + "\n"
             """:type profile: Profile"""
             profile = self._client.getProfile()
-            print "name : " + profile.displayName
+            print "Nama : " + profile.displayName + "\n"
         else:
-            print "must login!\n"
+            print "Harus Login!\n"
 
     @loggedIn
     def post_content(self, urls, data=None, files=None):
