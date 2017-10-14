@@ -55,6 +55,7 @@ def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     #print op
     try:
         sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang\nJangan Lupa Cek Note :) ")
+	sendMessage("Owner Grup " + group.name + "\n" + group.creator.displayName)
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
