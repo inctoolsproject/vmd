@@ -175,7 +175,7 @@ def SEND_MESSAGE(op):
                     if group.preventJoinByTicket is False: md += "\n\nKode Url : Diizinkan"
                     else: md += "\n\nKode Url : Diblokir"
                     if group.invitee is None: md += "\nJumlah Member : " + str(len(group.members)) + "\n\nUndangan Yang Belum Diterima : 0 Orang"
-                    else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
+                    else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang" + "\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if "help" in msg.text:
 	       	    sendMessage(msg.to,"「Łɨɲƹ ȡƹ˅ƹŁǿρƹřȿ þǿƮȿ」\n------------------------------\n【βåɱžķÿ β¤țž】\nHelp Command:\n[seţ]\n[siďer]\n[ʍe]\n[ʍid]\n[ǥid]\n[ǥinfo]\n[ţime]\n[þuka]\n[ţutup]\n[µrl]\n[ǥift]\n[ȿpeed]\n[μp]\n[ţagall]\n[ȼancel]\n[Ğn 「Nama」]\n[ɨnvite:「By Mid」]\n[ȿhow:「By Mid」\n[яename:「Ganti Nama Profil」]\n\nHelp Command 「Kicker Only」:\n[ɲk「By Tag」]\n[мulai]\n[µni]\n\nBased on : Vodka\nLink : http://github.com/merkremont/LineVodka\nSupport By : Line Developers\nModding By : Bamzky\nVersion Mod : 2.0.3beta\n\n【βåɱžķÿ β¤țž】\n------------------------------\n「Łɨɲƹ ȡƹ˅ƹŁǿρƹřȿ þǿƮȿ」")
