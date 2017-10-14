@@ -257,6 +257,15 @@ def SEND_MESSAGE(op):
                         gInviMids = [contact.mid for contact in group.invitee]
                         client.cancelGroupInvitation(msg.to, gInviMids)
                         sendMessage(msg.to, str(len(group.invitee)) + " Yang udah dicancel yak")	
+		if "mid @" in msg.text:
+		    _name = msg.text.replace("mid @","")
+		    _nametarget = _name.rstrip(' ')
+		    gs = client.getGroup(msg.to)
+		    for g in gs.members:
+		        if _nametarget == g.displayName:
+			    client.sendMessage(msg.to,g.mid)
+			else:
+			    pass
 		if "rename:" in msg.text:
                     string = msg.text.replace("rename:","")
                     if len(string.decode('utf-8')) <= 20:
@@ -290,22 +299,27 @@ def SEND_MESSAGE(op):
 		if "info @" in msg.text:
                     if msg.contentType == 0:
 		        _name = msg.text.replace("info @","")
-			_nametarget = _name.rstrip('  ')
+			_nametarget = _name.rstrip(' ')
+			gs = client.getGroup(msg.to)
                         client.sendMessage(msg.to,msg.contentMetadata["mid"])
-                        if 'displayName' in msg.contentMetadata:
-			    contact = client.getContact(msg.contentMetadata["mid"])
-                            try:
-                                contact = client.channel.getCover(msg.contentMetadata["mid"])
-                            except:
-                                contact = ""
-                            client.sendMessage(msg.to,"[Nama Profil]:\n" + msg.contentMetadata["displayName"] + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(contact))
-                        else:
-                            contact = client.getContact(msg.contentMetadata["mid"])
-                            try:
-                                contact = client.channel.getCover(msg.contentMetadata["mid"])
-                            except:
-                                contact = ""
-                            client.sendMessage(msg.to,"[Nama Profil]:\n" + contact.displayName + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(contact))
+			for g in gs.members:
+			   if _nametarget == g.displayName:
+			      if 'displayName' in msg.contentMetadata:
+			          contact = client.getContact(msg.contentMetadata["mid"])
+                                  try:
+                                      contact = client.channel.getCover(msg.contentMetadata["mid"])
+                                  except:
+                                      contact = ""
+                                  client.sendMessage(msg.to,"[Nama Profil]:\n" + msg.contentMetadata["displayName"] + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(contact))
+                              else:
+                                  contact = client.getContact(msg.contentMetadata["mid"])
+                                  try:
+                                      contact = client.channel.getCover(msg.contentMetadata["mid"])
+                                  except:
+                                      contact = ""
+                                  client.sendMessage(msg.to,"[Nama Profil]:\n" + contact.displayName + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(contact))
+			   else:
+			        pass
 		if msg.text == "speed":
                     start = time.time()
                     sendMessage(msg.to, "Processing...")
