@@ -55,7 +55,7 @@ def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     #print op
     try:
         sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang \nJangan Lupa Cek Note :) ")
-	sendMessage("Owner Grup " + group.name + "\n" + group.creator.displayName)
+	sendMessage("Owner Grup " + group.creator.displayName)
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
@@ -261,10 +261,11 @@ def SEND_MESSAGE(op):
 		if "mid @" in msg.text:
 		    _name = msg.text.replace("mid @","")
 		    _nametarget = _name.rstrip(' ')
-		    gs = client.getGroup(msg.to)
-		    for g in gs.members:
-		        if _nametarget == g.displayName:
-			    client.sendMessage(msg.to,g.mid)
+		    group = client.getGroup(msg.to)
+		    Mids = [contact.mid for contact in group.members]
+		    if _nametarget in Mids:
+			    contact = client.getContact(Mids)
+			    client.sendMessage(msg.to,Mids)
 			else:
 			    pass
 		if "rename:" in msg.text:
