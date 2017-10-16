@@ -273,6 +273,12 @@ def SEND_MESSAGE(op):
 			 client.sendMessage(msg.to,Mids[mid])
 		    else:
 			 pass
+		if "glist" in msg.text:
+                    gid = client.getGroupIdsJoined()
+                    h = ""
+                    for i in gid:
+                         h += " %s  \n" % (client.getGroup(i).name + " | Members : [ " + str(len (client.getGroup(i).members))+" ]")
+                         client.sendMessage(msg.to, "「Group List」 👑\n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
 		if "rename:" in msg.text:
                     string = msg.text.replace("rename:","")
                     if len(string.decode('utf-8')) <= 20:
