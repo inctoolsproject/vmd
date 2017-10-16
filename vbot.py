@@ -261,12 +261,6 @@ def SEND_MESSAGE(op):
                             client.kickoutFromGroup(msg.to,[target])
                          except:
                             pass
-		if "glist" in msg.text:
-                    gid = client.getGroupIdsJoined()
-                    h = ""
-                    for i in gid:
-                         h += "  %s\n" % (client.getGroup(i).name + " | Members : [ " + str(len (client.getGroup(i).members)) + " ]")
-                         client.sendMessage(msg.to,h)
 		if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
@@ -275,11 +269,18 @@ def SEND_MESSAGE(op):
                         gInviMids = [contact.mid for contact in group.invitee]
                         client.cancelGroupInvitation(msg.to, gInviMids)
                         sendMessage(msg.to, str(len(group.invitee)) + " Yang udah dicancel yak")	
-		if "Mid:" in msg.text:
-                   midd = eval(msg.contentMetadata["MENTION"])
-                   key1 = midd["MENTIONEES"][0]["M"]
-                   client.sendMessage(msg.to,"mid:"+key1)
-	        if "Invite gcreator" in msg.text:
+		if "Mid @" in msg.text:
+                   if msg.contentType = 13
+                         _name = msg.text.replace("Mid @","")
+                         _nametarget = _name.rstrip(' ')
+                         gs = client.getGroup(msg.to)
+                         for g in gs.members:
+                              if _nametarget == g.displayName:
+                              msg.contentMetadata = {'mid': g.mid}
+                              client.sendMessage(msg)
+                         else:
+                              pass
+		if "Invite gcreator" in msg.text:
                     if msg.toType == 2:
                          ginfo = client.getGroup(msg.to)
                          gCreator = ginfo.creator.mid
