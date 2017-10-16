@@ -265,7 +265,7 @@ def SEND_MESSAGE(op):
                     gid = client.getGroupIdsJoined()
                     h = ""
                     for i in gid:
-                         h += "[=> %s\n" % (client.getGroup(i).name)]"
+                         h += "=> %s\n" % (client.getGroup(i).name)"
                          client.sendMessage(msg.to,h)
 		if msg.text == "cancel":
                     group = client.getGroup(msg.to)
