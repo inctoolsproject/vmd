@@ -264,10 +264,10 @@ def SEND_MESSAGE(op):
 		    group = client.getGroup(msg.to)
 		    Mids = [contact.mid for contact in group.members]
 		    if _nametarget in Mids:
-			    contact = client.getContact(Mids)
-			    client.sendMessage(msg.to,Mids)
-			else:
-			    pass
+			 contact = client.getContact(Mids)
+			 client.sendMessage(msg.to,Mids)
+		    else:
+			 pass
 		if "rename:" in msg.text:
                     string = msg.text.replace("rename:","")
                     if len(string.decode('utf-8')) <= 20:
