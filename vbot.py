@@ -43,7 +43,7 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
 	
 def NOTIFIED_ADD_CONTACT(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param1).displayName + "Thanks udah ngeadd :* ")
+        sendMessage(op.param1, client.getContact(op.param1).displayName + "Thanks udah ngeadd 😘 ")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ADD_CONTACT\n\n")
@@ -209,7 +209,7 @@ def SEND_MESSAGE(op):
 		    sendMessage(msg.to,"eh")
 		    sendMessage(msg.to,"eh")
     		    sendMessage(msg.to,"eh")
-		    sendMessage(msg.to,"Udah ah spamnya nanti dimarahin 􀜁􀅔Har Har􏿿")
+		    sendMessage(msg.to,"eh udah eh spamnya nanti dimarahin 􀜁􀅔Har Har􏿿")
 		if msg.text == "buka":
                     group = client.getGroup(msg.to)
                     if group.preventJoinByTicket == False:
@@ -250,6 +250,23 @@ def SEND_MESSAGE(op):
                         sendMessage(msg.to, ""+contact.displayName+" maapin say 􀜁􀅔Har Har􏿿")
                     else:
                         sendMessage(msg.to,"salah goblog 􀜁􀅔Har Har􏿿")
+		if "Bye " in msg.text:
+                    key = eval(msg.contentMetadata["MENTION"])
+                    key["MENTIONEES"][0]["M"]
+                    targets = []
+                    for x in key["MENTIONEES"]:
+                         targets.append(x["M"])
+                    for target in targets:
+                         try:
+                            client.kickoutFromGroup(msg.to,[target])
+                         except:
+                            pass
+		if "glist" in msg.text:
+                    gid = client.getGroupIdsJoined()
+                    h = ""
+                    for i in gid:
+                         h += "[=> %s\n" % (client.getGroup(i).name)]"
+                         client.sendMessage(msg.to,h)
 		if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
@@ -258,27 +275,20 @@ def SEND_MESSAGE(op):
                         gInviMids = [contact.mid for contact in group.invitee]
                         client.cancelGroupInvitation(msg.to, gInviMids)
                         sendMessage(msg.to, str(len(group.invitee)) + " Yang udah dicancel yak")	
-		if "mid" in msg.text:
-		    _name0 = msg.text.replace("mid ","")
-                    _name1 = _name0.lstrip()
-                    _name2 = _name1.replace("@","")
-                    _name3 = _name2.rstrip()
-                    _nametarget = _name3
-		    group = client.getGroup(msg.to)
-		    Names = [contact.displayName for contact in group.members]
-		    Mids = [contact.mid for contact in group.members]
-		    if _nametarget in Names:
-			 mid = Names.index(_nametarget)
-			 contact = client.getContact(Mids[mid])
-			 client.sendMessage(msg.to,Mids[mid])
-		    else:
-			 pass
-		if "glist" in msg.text:
-                    gid = client.getGroupIdsJoined()
-                    h = ""
-                    for i in gid:
-                         h += " %s  \n" % (client.getGroup(i).name + " | Members : [ " + str(len (client.getGroup(i).members))+" ]")
-                         client.sendMessage(msg.to, "「Group List」 \n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
+		if "Mid:" in msg.text:
+                   midd = eval(msg.contentMetadata["MENTION"])
+                   key1 = midd["MENTIONEES"][0]["M"]
+                   client.sendMessage(msg.to,"mid:"+key1)
+	        if "Invite gcreator" in msg.text:
+                    if msg.toType == 2:
+                         ginfo = client.getGroup(msg.to)
+                         gCreator = ginfo.creator.mid
+                         try:
+                             client.findAndAddContactsByMid(gCreator)
+                             client.inviteIntoGroup(msg.to,[gCreator])
+                             print "success inv gCreator"
+                         except:
+                             pass
 		if "rename:" in msg.text:
                     string = msg.text.replace("rename:","")
                     if len(string.decode('utf-8')) <= 20:
@@ -309,30 +319,6 @@ def SEND_MESSAGE(op):
                                 print (msg.to,[g.mid])
                             except:
                                 sendMessage(msg.to,"Grup Dibersihkan")
-		if "info @" in msg.text:
-                    if msg.contentType == 0:
-		        _name = msg.text.replace("info @","")
-			_nametarget = _name.rstrip()
-			gs = client.getGroup(msg.to)
-                        client.sendMessage(msg.to,msg.contentMetadata["mid"])
-			for g in gs.members:
-			   if _nametarget in g.displayName:
-			      if 'displayName' in msg.contentMetadata:
-			          contact = client.getContact(msg.contentMetadata["mid"])
-                                  try:
-                                      contact = client.channel.getCover(msg.contentMetadata["mid"])
-                                  except:
-                                      contact = ""
-                                  client.sendMessage(msg.to,"[Nama Profil]:\n" + msg.contentMetadata["displayName"] + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(contact))
-                              else:
-                                  contact = client.getContact(msg.contentMetadata["mid"])
-                                  try:
-                                      contact = client.channel.getCover(msg.contentMetadata["mid"])
-                                  except:
-                                      contact = ""
-                                  client.sendMessage(msg.to,"[Nama Profil]:\n" + contact.displayName + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(contact))
-			   else:
-			        pass
 		if msg.text == "speed":
                     start = time.time()
                     sendMessage(msg.to, "Processing...")
