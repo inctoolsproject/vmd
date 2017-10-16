@@ -262,10 +262,12 @@ def SEND_MESSAGE(op):
 		    _name = msg.text.replace("mid @","")
 		    _nametarget = _name.rstrip(' ')
 		    group = client.getGroup(msg.to)
+		    Names = [contact.displayName for contact in group.members]
 		    Mids = [contact.mid for contact in group.members]
-		    if _nametarget in Mids:
-			 contact = client.getContact(Mids)
-			 client.sendMessage(msg.to,Mids)
+		    if _nametarget in Names:
+			 Mids = Names.index(_nametarget)
+			 contact = client.getContact(Mids[Mids])
+			 client.sendMessage(msg.to,Mids[Mids])
 		    else:
 			 pass
 		if "rename:" in msg.text:
