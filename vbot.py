@@ -270,7 +270,7 @@ def SEND_MESSAGE(op):
                         client.cancelGroupInvitation(msg.to, gInviMids)
                         sendMessage(msg.to, str(len(group.invitee)) + " Yang udah dicancel yak")	
 		if "Mid @" in msg.text:
-                   if msg.contentType = 13
+                   if msg.contentType == 13:
                          _name = msg.text.replace("Mid @","")
                          _nametarget = _name.rstrip(' ')
                          gs = client.getGroup(msg.to)
