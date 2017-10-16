@@ -286,7 +286,8 @@ def SEND_MESSAGE(op):
                          try:
                              client.findAndAddContactsByMid(gCreator)
                              client.inviteIntoGroup(msg.to,[gCreator])
-                             print "success inv gCreator"
+			     sendMessage(msg.to,"Kreator Grup Telah Diinvite")
+			     print "Success Invite gCreator"
                          except:
                              pass
 		if "rename:" in msg.text:
