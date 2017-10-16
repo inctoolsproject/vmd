@@ -276,8 +276,8 @@ def SEND_MESSAGE(op):
                          gs = client.getGroup(msg.to)
                          for g in gs.members:
                               if _nametarget == g.displayName:
-                              msg.contentMetadata = ['mid': g.mid]
-                              client.sendMessage(msg)
+                                  msg.contentMetadata = {'mid': g.mid}
+                                  client.sendMessage(msg)
                          else:
                               pass
 		if "Invite gcreator" in msg.text:
