@@ -258,7 +258,6 @@ def SEND_MESSAGE(op):
 		    sendMessage(msg.to,"maps")
 		    sendMessage(msg.to,"maps")
 		    sendMessage(msg.to,"maps")
-			sendMessage(msg.to,"maps")
 		    sendMessage(msg.to,"maps")
 		    sendMessage(msg.to,"maps")
 		    sendMessage(msg.to,"maps")
@@ -318,7 +317,7 @@ def SEND_MESSAGE(op):
 		    sendMessage(msg.to,"maps")
 		    sendMessage(msg.to,"maps")
 		    sendMessage(msg.to,"maps")
-		    
+		    sendMessage(msg.to,"maps")
 		if msg.text == "buka":
                     group = client.getGroup(msg.to)
                     if group.preventJoinByTicket == False:
