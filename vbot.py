@@ -281,17 +281,23 @@ def SEND_MESSAGE(op):
                         gInviMids = [contact.mid for contact in group.invitee]
                         client.cancelGroupInvitation(msg.to, gInviMids)
                         sendMessage(msg.to, str(len(group.invitee)) + " Yang udah dicancel yak")	
-		if "Mid @" in msg.text:
-                   if msg.contentType == 13:
-                         _name = msg.text.replace("Mid @","")
-                         _nametarget = _name.rstrip()
-                         gs = client.getGroup(msg.to)
-                         for g in gs.members:
-                              if _nametarget == g.displayName:
-                                  msg.contentMetadata = {'mid': g.mid}
-                                  client.sendMessage(msg)
-                         else:
-                              pass
+		if "Mid " in msg.text:
+                    key = eval(msg.contentMetadata["MENTION"])
+                    key["MENTIONEES"][0]["M"]
+                    targets = []
+                    for x in key["MENTIONEES"]:
+                         targets.append(x["M"])
+                    for target in targets:
+			 gs = client.getGroup(msg.to)
+                    for g in gs.members:
+			 try:
+                             if _nametarget == g.displayName:
+                                 msg.contentMetadata = {'mid': g.mid}
+                                 client.sendMessage(msg.to,[target])
+                             else:
+                                 pass
+			 except:
+			     pass
 		if "Invite gcreator" in msg.text:
                     if msg.toType == 2:
                          ginfo = client.getGroup(msg.to)
