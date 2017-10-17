@@ -53,9 +53,14 @@ tracer.addOpInterrupt(5,NOTIFIED_ADD_CONTACT)
 
 def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     #print op
+    group = client.getGroup(msg.to)
     try:
-        sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang \nJangan Lupa Cek Note :) ")
-	sendMessage("Owner Grup " + group.creator.displayName)
+        gCreator = group.creator.displayName
+    except:
+        gCreator = "Error"
+    try:
+        sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang \nDi " + group.name)
+	sendMessage("Owner Grup " + group.name + "\n" + gCreator)
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
@@ -175,7 +180,7 @@ def SEND_MESSAGE(op):
                     md = "[Nama Grup : ]\n" + group.name + "\n\n[Id Grup : ]\n" + group.id + "\n\n[Pembuat Grup :]\n" + gCreator + "\n\n[Gambar Grup : ]\nhttp://dl.profile.line-cdn.net/" + group.pictureStatus
                     if group.preventJoinByTicket is False: md += "\n\nKode Url : Diizinkan"
                     else: md += "\n\nKode Url : Diblokir"
-                    if group.invitee is None: md += "\nJumlah Member : " + str(len(group.members)) + "\n\nUndangan Yang Belum Diterima : 0 Orang"
+                    if group.invitee is None: md += "\nJumlah Member : " + str(len(group.members)) + " Orang" + "\nUndangan Yang Belum Diterima : 0 Orang"
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang" + "\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if "help" in msg.text:
@@ -272,7 +277,7 @@ def SEND_MESSAGE(op):
 		if "Mid @" in msg.text:
                    if msg.contentType == 13:
                          _name = msg.text.replace("Mid @","")
-                         _nametarget = _name.rstrip(' ')
+                         _nametarget = _name.rstrip()
                          gs = client.getGroup(msg.to)
                          for g in gs.members:
                               if _nametarget == g.displayName:
@@ -292,7 +297,7 @@ def SEND_MESSAGE(op):
                              pass
 		if "Steal: " in msg.text:
                     _bamz = msg.text.replace("Steal: ","")
-                    _bamz0 = client.getContact(bamz)
+                    _bamz0 = client.getContact(_bamz)
                     _bamz1 = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
                     try:
                         cover = client.channel.getCover(_bamz0)
