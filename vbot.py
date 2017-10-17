@@ -178,7 +178,7 @@ def SEND_MESSAGE(op):
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang" + "\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if "help" in msg.text:
-	       	    sendMessage(msg.to,"\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\nHelp Command:\n[seţ]\n[siďer]\n[ʍe]\n[ʍid]\n[ǥid]\n[ǥinfo]\n[ţime]\n[þuka]\n[ţutup]\n[µrl]\n[ǥift]\n[ȿpeed]\n[μp]\n[ţagall]\n[ȼancel]\n[Ğn 「Nama」]\n[ɨnvite:「By Mid」]\n[ȿhow:「By Mid」\n[яename:「Ganti Nama Profil」]\n[Invite ǥcreator]\n\nHelp Command 「Kicker Only」:\n[к:「By Name」]\n[ик「By Tag」]\n[мulai]\n[µni]\n[вye「By Tag」]\n\nBased on : Vodka\nLink : http://github.com/merkremont/LineVodka\nSupport By : Line Developers\nModding By : Bamzky\nVersion Mod : 2.0.87beta\n\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
+	       	    sendMessage(msg.to,"\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\nHelp Command:\n[seţ]\n[siďer]\n[ʍe]\n[ʍid]\n[ǥid]\n[ǥinfo]\n[ǥlist]\n[ţime]\n[þuka]\n[ţutup]\n[µrl]\n[ǥift]\n[ȿpeed]\n[μp]\n[ţagall]\n[ȼancel]\n[Ğn 「Nama」]\n[ɨnvite:「By Mid」]\n[ȿhow:「By Mid」\n[яename:「Ganti Nama Profil」]\n[Invite ǥcreator]\n\nHelp Command 「Kicker Only」:\n[к:「By Name」]\n[ик「By Tag」]\n[мulai]\n[µni]\n[вye「By Tag」]\n\nBased on : Vodka\nLink : http://github.com/merkremont/LineVodka\nSupport By : Line Developers\nModding By : Bamzky\nVersion Mod : 2.0.87beta\n\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
 		if "Gn " in msg.text:
 		    if msg.toType == 2:
 			X = client.getGroup(msg.to)
@@ -281,23 +281,6 @@ def SEND_MESSAGE(op):
                         gInviMids = [contact.mid for contact in group.invitee]
                         client.cancelGroupInvitation(msg.to, gInviMids)
                         sendMessage(msg.to, str(len(group.invitee)) + " Yang udah dicancel yak")	
-		if "Mid " in msg.text:
-                    key = eval(msg.contentMetadata["MENTION"])
-                    key["MENTIONEES"][0]["M"]
-                    targets = []
-                    for x in key["MENTIONEES"]:
-                         targets.append(x["M"])
-                    for target in targets:
-			 gs = client.getGroup(msg.to)
-                    for g in gs.members:
-			 try:
-                             if _nametarget == g.displayName:
-                                 msg.contentMetadata = {'mid': g.mid}
-                                 client.sendMessage(msg.to,[target])
-                             else:
-                                 pass
-			 except:
-			     pass
 		if "Invite gcreator" in msg.text:
                     if msg.toType == 2:
                          ginfo = client.getGroup(msg.to)
@@ -308,21 +291,12 @@ def SEND_MESSAGE(op):
 			     print "Success Invite gCreator"
                          except:
                              pass
-		if "Steal: " in msg.text:
-                    _bamz = msg.text.replace("Steal: ","")
-                    _bamz0 = client.getContact(_bamz)
-                    _bamz1 = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
-                    try:
-                        cover = client.channel.getCover(_bamz0)
-                    except:
-                        cover = ""
-                    client.sendMessage(msg.to,"Gambar Foto Profilenya")
-                    client.sendImageWithURL(msg.to,_bamz1)
-                    if cover == "":
-                        client.sendMessage(msg.to,"User tidak memiliki cover atau sejenisnya")
-                    else:
-                        client.sendMessage(msg.to,"Gambar Covernya")
-                        client.sendImageWithURL(msg.to,cover)
+		if "glist" in msg.text:
+                    gid = client.getGroupIdsJoined()
+                    h = ""
+                    for i in gid:
+                         h += "=> %s  \n" % (client.getGroup(i).name + " | Members : [" + str(len(client.getGroup(i).members)) + " Orang]")
+                         client.sendMessage(msg.to, "[List Group :]\n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
 		if "rename:" in msg.text:
                     string = msg.text.replace("rename:","")
                     if len(string.decode('utf-8')) <= 20:
