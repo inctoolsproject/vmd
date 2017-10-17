@@ -4,6 +4,7 @@ _This Is A New Version Of Line Vodka_
 Tutorial
 ------
 Recomended for python 2.7
+RUN IT ON TERMUX!
 
 First :
     
@@ -40,4 +41,4 @@ Merk Kremont / [@merkremont](https://twitter.com/merkremont)
 Mod
 ---
 
-Version Mod : 2.0.3b - Mod By Bamzky / [@bamaseptituta_](https://instagram.com/bamaseptituta_)
+Version Mod : 2.0.87b - Mod By Bamzky / [@bamaseptituta_](https://instagram.com/bamaseptituta_)
