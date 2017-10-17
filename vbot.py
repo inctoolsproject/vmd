@@ -53,14 +53,8 @@ tracer.addOpInterrupt(5,NOTIFIED_ADD_CONTACT)
 
 def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     #print op
-    group = client.getGroup(msg.to)
     try:
-        gCreator = group.creator.displayName
-    except:
-        gCreator = "Error"
-    try:
-        sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang \nDi " + group.name)
-	sendMessage("Owner Grup " + group.name + "\n" + gCreator)
+        sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
