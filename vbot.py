@@ -294,7 +294,7 @@ def SEND_MESSAGE(op):
 		if "creator" in msg.text:
 		    if msg.contentType == 13:
 			msg.contentMetadata = {'mid': "u12c5cf853784842cd2e4354e91e66804"}
-			client.sendMessage(msg)
+			client.sendMessage(msg.to)
 		if msg.text == "Glist":
                     gid = client.getGroupIdsJoined()
                     h = ""
