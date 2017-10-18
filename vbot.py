@@ -53,8 +53,10 @@ tracer.addOpInterrupt(5,NOTIFIED_ADD_CONTACT)
 
 def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     #print op
+    ginfo = client.getGroup(op.param1)
     try:
-        sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang")
+        sendMessage(op.param1, client.getContact(op.param2).displayName + ", Selamat Datang Di Grup\n" + str(ginfo.name))
+	sendMessage(op.param1, "Owner Grup " + str(ginfo.name) + "\n" + str(ginfo.creator.displayName))
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
@@ -178,7 +180,7 @@ def SEND_MESSAGE(op):
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang" + "\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if "help" in msg.text:
-	       	    sendMessage(msg.to,"\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\nHelp Command:\n[seţ]\n[siďer]\n[ʍe]\n[ʍid]\n[ǥid]\n[ǥinfo]\n[ǥlist]\n[ţime]\n[þuka]\n[ţutup]\n[µrl]\n[ǥift]\n[ȿpeed]\n[μp]\n[ţagall]\n[ȼancel]\n[Ğn 「Nama」]\n[ɨnvite:「By Mid」]\n[ȿhow:「By Mid」\n[яename:「Ganti Nama Profil」]\n[Invite ǥcreator]\n\nHelp Command 「Kicker Only」:\n[к:「By Name」]\n[ик「By Tag」]\n[мulai]\n[µni]\n[вye「By Tag」]\n\nBased on : Vodka\nLink : http://github.com/merkremont/LineVodka\nSupport By : Line Developers\nModding By : Bamzky\nVersion Mod : 2.0.87beta\n\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
+	       	    sendMessage(msg.to,"\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\nHelp Command:\n[seţ]\n[siďer]\n[ʍe]\n[ʍid]\n[ǥid]\n[ǥinfo]\n[ǥlist]\n[ţime]\n[þuka]\n[ţutup]\n[µrl]\n[ǥift]\n[ȿpeed]\n[μp]\n[ţagall]\n[ȼancel]\n[Ğn 「Nama」]\n[ɨnvite:「By Mid」]\n[ȿhow:「By Mid」\n[яename:「Ganti Nama Profil」]\n[Invite ǥcreator]\n[ȼreator]\n\nHelp Command 「Kicker Only」:\n[к:「By Name」]\n[ик「By Tag」]\n[мulai]\n[µni]\n[вye「By Tag」]\n\nBased on : Vodka\nLink : http://github.com/merkremont/LineVodka\nSupport By : Line Developers\nModding By : Bamzky\nVersion Mod : 2.0.87beta\n\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
 		if "Gn " in msg.text:
 		    if msg.toType == 2:
 			X = client.getGroup(msg.to)
@@ -291,10 +293,17 @@ def SEND_MESSAGE(op):
 			     print "Success Invite gCreator"
                          except:
                              pass
+		if "Mid @" in msg.text:
+                    _name = msg.text.replace("Mid @","")
+                    _nametarget = _name.rstrip('')
+                    gs = client.getGroup(msg.to)
+                    for g in gs.members:
+                        if _nametargets == g.displayName:
+                            client.sendMessage(msg.to, g.mid)
+                    	else:
+                            pass
 		if "creator" in msg.text:
-		    if msg.contentType == 13:
-			msg.contentMetadata = {'mid': "u12c5cf853784842cd2e4354e91e66804"}
-			client.sendMessage(msg.to)
+		    client.sendMessage(msg.to,"show:u12c5cf853784842cd2e4354e91e66804")
 		if msg.text == "Glist":
                     gid = client.getGroupIdsJoined()
                     h = ""
