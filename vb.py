@@ -303,7 +303,7 @@ def SEND_MESSAGE(op):
                          except:
                              pass
 		if "creator" in msg.text:
-		    client.sendMessage(msg.to,"show:u12c5cf853784842cd2e4354e91e66804")
+		    sendMessage(msg.to,"show:u12c5cf853784842cd2e4354e91e66804")
 		if "rename:" in msg.text:
                     string = msg.text.replace("rename:","")
                     if len(string.decode('utf-8')) <= 20:
