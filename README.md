@@ -14,7 +14,7 @@ First :
 
 Using git :
 
-    $ git clone http://github.com/initialaf/vmod.git
+    $ git clone http://github.com/stfuremix/vmd.git
 
 Python packages :
 
@@ -41,4 +41,4 @@ Merk Kremont / [@merkremont](https://twitter.com/merkremont)
 Mod
 ---
 
-Version Mod : 2.0.87b - Mod By Bamzky / [@bamaseptituta_](https://instagram.com/bamaseptituta_)
+Version Mod : 2.2.1b - Mod By Bamzky / [@bamaseptituta_](https://instagram.com/bamaseptituta_)
