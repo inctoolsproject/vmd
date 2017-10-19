@@ -264,6 +264,15 @@ def SEND_MESSAGE(op):
                         sendMessage(msg.to, ""+contact.displayName+" maapin say 􀜁􀅔Har Har􏿿")
                     else:
                         sendMessage(msg.to, "salah goblog 􀜁􀅔Har Har􏿿")
+		if "glist" in msg.text:
+		    gid = client.getGroupIdsJoined()
+                    h = ""
+                    for i in gid:
+			try:
+                            h += "=> %s  \n" % (client.getGroup(i).name + " | Members : [" + str(len (client.getGroup(i).members))+" Orang]")
+                            client.sendMessage(msg.to, "#[List Grup]# \n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
+			except:
+			    pass
 		if "Bye " in msg.text:
                     key = eval(msg.contentMetadata["MENTION"])
                     key["MENTIONEES"][0]["M"]
