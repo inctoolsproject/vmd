@@ -173,14 +173,14 @@ def SEND_MESSAGE(op):
                         gCreator = group.creator.displayName
                     except:
                         gCreator = "Error"
-                    md = "[Nama Grup : ]\n" + group.name + "\n\n[Id Grup : ]\n" + group.id + "\n\n[Pembuat Grup :]\n" + gCreator + "\n\n[Gambar Grup : ]\nhttp://dl.profile.line-cdn.net/" + group.pictureStatus
+                    md = "[Nama Grup]:\n" + group.name + "\n\n[Id Grup]:\n" + group.id + "\n\n[Pembuat Grup]:\n" + gCreator + "\n\n[Gambar Grup]:\nhttp://dl.profile.line-cdn.net/" + group.pictureStatus
                     if group.preventJoinByTicket is False: md += "\n\nKode Url : Diizinkan"
                     else: md += "\n\nKode Url : Diblokir"
                     if group.invitee is None: md += "\nJumlah Member : " + str(len(group.members)) + " Orang" + "\nUndangan Yang Belum Diterima : 0 Orang"
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang" + "\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if "help" in msg.text:
-	       	    sendMessage(msg.to,"\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\nHelp Command:\n[seţ]\n[siďer]\n[ʍe]\n[ʍid]\n[ǥid]\n[ǥinfo]\n[ǥlist]\n[ţime]\n[þuka]\n[ţutup]\n[µrl]\n[ǥift]\n[ȿpeed]\n[μp]\n[ţagall]\n[ȼancel]\n[Ğn 「Nama」]\n[ɨnvite:「By Mid」]\n[ȿhow:「By Mid」\n[яename:「Ganti Nama Profil」]\n[Invite ǥcreator]\n[ȼreator]\n\nHelp Command 「Kicker Only」:\n[к:「By Name」]\n[ик「By Tag」]\n[мulai]\n[µni]\n[вye「By Tag」]\n\nBased on : Vodka\nSupport By : Line Developers\nModding By : Bamzky\nVersion Mod : 2.0.87beta\n\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
+	       	    sendMessage(msg.to,"\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\n\n「Help Command:」\n🔥 [seţ]\n🔥 [siďer]\n🔥 [ʍe]\n🔥 [ʍid]\n🔥 [ǥid]\n🔥 [ǥinfo]\n🔥 [ǥrandom:「Nomor」]\n🔥 [ţime]\n🔥 [þuka]\n🔥 [ţutup]\n🔥 [µrl]\n🔥 [ǥift]\n🔥 [ȿpeed]\n🔥 [μp]\n🔥 [ţagall]\n🔥 [ȼancel]\n🔥 [Ğn 「Nama」]\n🔥 [ɨnvite:「By Mid」]\n🔥 [ȿhow:「By Mid」\n🔥 [яename:「Ganti Nama Profil」]\n🔥 [Invite ǥcreator]\n🔥 [ȼreator]\n\n「Help Command[Use For Kicker Only]:」\n💥 [к:「By Name」]\n💥 [ик「By Tag」]\n💥 [мulai]\n💥 [µni]\n💥 [вye「By Tag」]\n\n=> Based on : Vodka\n=> Support By : Line Developers\n=> Modding By : Bamzky\n=> Version Mod : 2.2.1beta\n\n\nḶ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
 		if "Gn " in msg.text:
 		    if msg.toType == 2:
 			X = client.getGroup(msg.to)
@@ -267,9 +267,9 @@ def SEND_MESSAGE(op):
 		if "glist" in msg.text:
 		    gid = client.getGroupIdsJoined()
                     h = ""
-                    for i in gid:
+                    for g in gid:
 			try:
-                            h += "=> %s  \n" % (client.getGroup(i).name + " | Members : [" + str(len(client.getGroup(i).members))+" Orang]")
+                            h += "=> %s  \n" % (client.getGroup(g).name + " | Members : [" + str(len(client.getGroup(g).members))+" Orang]")
                             client.sendMessage(msg.to, "#[List Grup]# \n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
 			except:
 			    pass
@@ -284,6 +284,29 @@ def SEND_MESSAGE(op):
                             client.kickoutFromGroup(msg.to,[target])
                          except:
                             pass
+		if "Mid @" in msg.text:
+                    _name = msg.text.replace("Mid @","")
+                    _nametarget = _name.rstrip('')
+                    gs = client.getGroup(msg.to)
+                    for g in gs.members:
+                    	 if _nametarget == g.displayName:
+                              client.sendMessage(msg.to, g.mid)
+                    	 else:
+                              pass
+		if "grandom:" in msg.text:
+		    if msg.toType == 2:
+		        strnum = msg.text.replace("random:","")
+			source_str = 'abcdefghijklmnopqrstuvwxyz1234567890@:;./_][!&%$#)(=~^|'
+			try:
+			    num = int(strnum)
+			    group = client.getGroup(msg.to)
+			    for var in range(0,num):
+				name = "".join([random.choice(source_str) for x in xrange(10)])
+				time.sleep(0.01)
+				group.name = name
+				client.updateGroup(group)
+			except:
+			    client.sendMessage(msg.to,"Error bang, coba ulang bang oke 􀜁􀅔double thumbs up􏿿􀜁􀅔Har Har􏿿")
 		if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
