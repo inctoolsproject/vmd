@@ -293,23 +293,8 @@ def SEND_MESSAGE(op):
 			     print "Success Invite gCreator"
                          except:
                              pass
-		if "Mid @" in msg.text:
-                    _name = msg.text.replace("Mid @","")
-                    _nametarget = _name.rstrip('')
-                    gs = client.getGroup(msg.to)
-                    for g in gs.members:
-                        if _nametargets == g.displayName:
-                            client.sendMessage(msg.to, g.mid)
-                    	else:
-                            pass
 		if "creator" in msg.text:
 		    client.sendMessage(msg.to,"show:u12c5cf853784842cd2e4354e91e66804")
-		if msg.text == "Glist":
-                    gid = client.getGroupIdsJoined()
-                    h = ""
-                    for g in gid:
-                        h += "=> %s  \n" % (client.getGroup(g).name + " | Members : [ " + str(len(client.getGroup(g).members)) + " ]")
-                        client.sendMessage(msg.to,"[List Group :]\n" + h + "Total Group : " + "[ " + str(len(gid)) + " ] ")
 		if "rename:" in msg.text:
                     string = msg.text.replace("rename:","")
                     if len(string.decode('utf-8')) <= 20:
