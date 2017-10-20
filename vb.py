@@ -157,9 +157,7 @@ def SEND_MESSAGE(op):
                     sendMessage(msg.to, text=None, contentMetadata={'mid': msg.from_}, contentType=13)
                 if msg.text == "gift":
                     sendMessage(msg.to, text="gift sent", contentMetadata=None, contentType=9)
-		if msg.text == "up":
-		    sendMessage(msg.to, text="up up amat", contentMetadata=None, ContentType=13)
-                else:
+		else:
                     pass
             else:
                 pass
@@ -266,15 +264,55 @@ def SEND_MESSAGE(op):
                         sendMessage(msg.to, ""+contact.displayName+" maapin say 􀜁􀅔Har Har􏿿")
                     else:
                         sendMessage(msg.to, "salah goblog 􀜁􀅔Har Har􏿿")
+		if "steal @" in msg.text:
+                    if msg.toType == 2:
+                        steal = msg.text.replace("steal @","")
+                        stealname = steal.rstrip(" ")
+                        group = client.getGroup(msg.to)
+                        targets = []
+                        if steal == "":
+                            client.sendMessage(msg.to,"Invalid user")
+                        else:
+                            for i in group.members:
+                                if stealname == i.displayName:
+                                    targets.append(i.mid)
+                            if targets == []:
+                                client.sendMessage(msg.to,"User tidak ditemukan")
+                            else:
+                                for target in targets:
+                                    try:
+                                        contact = client.getContact(target)
+                                        image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
+                                        try:
+                                            cover = client.channel.getCover(contact)
+                                        except:
+                                            cover = ""
+                                        try:
+                                            client.sendMessage(msg.to,"Gambar Foto Profilenya")
+                                            client.sendImageWithURL(msg.to,image)
+                                            if cover == "":
+                                                client.sendMessage(msg.to,"User tidak memiliki cover atau sejenisnya")
+                                            else:
+                                                client.sendMessage(msg.to,"Gambar Covernya")
+                                                client.sendImageWithURL(msg.to,cover)
+                                        except Exception as error:
+                                            client.sendMessage(msg.to,(error))
+                                            break
+                                    except:
+                                        client.sendMessage(msg.to,"Error!")
+                                        break
+                    else:
+                        client.sendMessage(msg.to,"Tidak bisa dilakukan di luar wilayah")
 		if "glist" in msg.text:
 		    gid = client.getGroupIdsJoined()
                     h = ""
-                    for g in gid:
+                    for i in gid:
 			try:
-                            h += "=> %s  \n" % (client.getGroup(g).name + " | Members : [" + str(len(client.getGroup(g).members))+" Orang]")
+                            h += "=> %s  \n" % (client.getGroup(i).name + " | Members : [" + str(len(client.getGroup(i).members))+" Orang]")
                             client.sendMessage(msg.to, "#[List Grup]# \n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
-			except:
-			    pass
+			except Exception as error:
+                            client.sendMessage(msg.to,(error))
+                            break
 		if "Bye " in msg.text:
                     key = eval(msg.contentMetadata["MENTION"])
                     key["MENTIONEES"][0]["M"]
