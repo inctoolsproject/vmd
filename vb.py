@@ -303,7 +303,7 @@ def SEND_MESSAGE(op):
                     else:
                         gInviMids = [contact.mid for contact in group.invitee]
                         client.cancelGroupInvitation(msg.to, gInviMids)
-                        sendMessage(msg.to, str(len(group.invitee)) + " Yang udah dicancel yak")	
+                        sendMessage(msg.to, str(len(group.invitee)) + " Orang Yang udah dicancel yak")	
 		if "Invite gcreator" in msg.text:
                     if msg.toType == 2:
                          ginfo = client.getGroup(msg.to)
