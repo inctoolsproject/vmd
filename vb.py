@@ -157,6 +157,8 @@ def SEND_MESSAGE(op):
                     sendMessage(msg.to, text=None, contentMetadata={'mid': msg.from_}, contentType=13)
                 if msg.text == "gift":
                     sendMessage(msg.to, text="gift sent", contentMetadata=None, contentType=9)
+		if msg.text == "up":
+		    sendMessage(msg.to, text="up up amat", contentMetadata=None, ContentType=13)
                 else:
                     pass
             else:
@@ -180,7 +182,7 @@ def SEND_MESSAGE(op):
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang" + "\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if "help" in msg.text:
-	       	    sendMessage(msg.to,"\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\n\n-----------------------------------------------------------------\n「Help Command:」\n=> [seţ]\n=> [siďer]\n=> [ʍe]\n=> [ʍid]\n=> [ǥid]\n=> [ǥinfo]\n=> [ǥrandom:「Nomor」]\n=> [ţime]\n=> [þuka]\n=> [ţutup]\n=> [µrl]\n=> [ǥift]\n=> [ȿpeed]\n=> [μp]\n=> [ţagall]\n=> [ȼancel]\n=> [Ğn 「Nama」]\n=> [ɨnvite:「By Mid」]\n=> [ȿhow:「By Mid」\n=> [яename:「Ganti Nama Profil」]\n=> [Invite ǥȼreator]\n=> [ȼreator]\n\n「Help Command [Use For Kicker Only]:」\n=> [к:「By Name」]\n=> [ик「By Tag」]\n=> [мulai]\n=> [µni]\n=> [вye「By Tag」]\n\n=> Based on : Vodka\n=> Support By : Line Developers\n=> Modding By : Bamzky\n=> Version Mod : 2.2.1beta\n-----------------------------------------------------------------\n\n\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
+	       	    sendMessage(msg.to,"\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\n-----------------------------------------------------------------\n「Help Command:」\n=> [seţ]\n=> [siďer]\n=> [ʍe]\n=> [ʍid]\n=> [ǥid]\n=> [ǥinfo]\n=> [ǥrandom:「Nomor」]\n=> [ţime]\n=> [þuka]\n=> [ţutup]\n=> [µrl]\n=> [ǥift]\n=> [ȿpeed]\n=> [μp]\n=> [ţagall]\n=> [ȼancel]\n=> [Ğn 「Nama」]\n=> [ɨnvite:「By Mid」]\n=> [ȿhow:「By Mid」\n=> [яename:「Ganti Nama Profil」]\n=> [Invite ǥȼreator]\n=> [ȼreator]\n\n「Help Command [Use For Kicker Only]:」\n=> [к:「By Name」]\n=> [ик「By Tag」]\n=> [мulai]\n=> [µni]\n=> [вye「By Tag」]\n\n=> Based on : Vodka\n=> Support By : Line Developers\n=> Modding By : Bamzky\n=> Version Mod : 2.2.1beta\n-----------------------------------------------------------------\n\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
 		if "Gn " in msg.text:
 		    if msg.toType == 2:
 			X = client.getGroup(msg.to)
