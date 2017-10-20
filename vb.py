@@ -311,13 +311,15 @@ def SEND_MESSAGE(op):
                          try:
                              client.findAndAddContactsByMid(gCreator)
                              client.inviteIntoGroup(msg.to,[gCreator])
-			     print "Success Invite gCreator"
+			     print "\nSuccess Invite gCreator"
                          except:
                              pass
 		if "botmaker" in msg.text:
-		    if msg.contentType == 13:
-			 msg.contentMetadata = {'mid': "u12c5cf853784842cd2e4354e91e66804"}
-			 client.sendMessage(msg)
+		    M = Message()
+                    M.to = msg.to
+                    M.contentType = 13
+                    M.contentMetadata = {'mid': "u12c5cf853784842cd2e4354e91e66804"}
+                    client.sendMessage(M)
 		if "invclone:1" in msg.text:
 		    sendMessage(msg.to,"invite:u6db82b481cff8971ede277f8a5c0b6fb")
 		if "invclone:2" in msg.text:
@@ -374,7 +376,6 @@ def SEND_MESSAGE(op):
                     client.findAndAddContactsByMid(key)
                     client.inviteIntoGroup(msg.to, [key])
                     contact = client.getContact(key)
-                    sendMessage(msg.to, ""+contact.displayName+" Gua inv lu yak :v")
                 if msg.text == "me":
                     M = Message()
                     M.to = msg.to
