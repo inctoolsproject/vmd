@@ -180,7 +180,7 @@ def SEND_MESSAGE(op):
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang" + "\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if "help" in msg.text:
-	       	    sendMessage(msg.to,"\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\n-----------------------------------------------------------------\n「Help Command:」\n=> [seţ]\n=> [siďer]\n=> [ʍe]\n=> [ʍid]\n=> [ǥid]\n=> [ǥinfo]\n=> [ǥrandom:「Nomor」]\n=> [ţime]\n=> [þuka]\n=> [ţutup]\n=> [µrl]\n=> [ǥift]\n=> [ȿpeed]\n=> [μp]\n=> [ţagall]\n=> [ȼancel]\n=> [Ğn 「Nama」]\n=> [ɨnvite:「By Mid」]\n=> [ȿhow:「By Mid」\n=> [яename:「Ganti Nama Profil」]\n=> [Invite ǥȼreator]\n=> [ȼreator]\n\n「Help Command [Use For Kicker Only]:」\n=> [к:「By Name」]\n=> [ик「By Tag」]\n=> [мulai]\n=> [µni]\n=> [вye「By Tag」]\n\n=> Based on : Vodka\n=> Support By : Line Developers\n=> Modding By : Bamzky\n=> Version Mod : 2.2.1beta\n-----------------------------------------------------------------\n\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
+	       	    sendMessage(msg.to,"\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\n-----------------------------------------------------------------\n「Help Command:」\n=> [seţ]\n=> [siďer]\n=> [ʍe]\n=> [ʍid]\n=> [ǥid]\n=> [ǥinfo]\n=> [ǥrandom:「Nomor」]\n=> [ǥȼreator]\n=> [ţime]\n=> [þuka]\n=> [ţutup]\n=> [µrl]\n=> [ǥift]\n=> [ȿpeed]\n=> [μp]\n=> [ţagall]\n=> [ȼancel]\n=> [Ğn 「Nama」]\n=> [ɨnvite:「By Mid」]\n=> [ɨnvȼlone:「No.1-8」]\n=> [ȿhow:「By Mid」\n=> [яename:「Ganti Nama Profil」]\n=> [Ĩnvite ǥȼreator]\n=> [ȼreator]\n\n「Help Command [Use For Kicker Only]:」\n=> [к:「By Name」]\n=> [ик「By Tag」]\n=> [мulai]\n=> [µni]\n=> [вye「By Tag」]\n\n=> Based on : Vodka\n=> Support By : Line Developers\n=> Modding By : Bamzky\n=> Version Mod : 2.2.1beta\n-----------------------------------------------------------------\n\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
 		if "Gn " in msg.text:
 		    if msg.toType == 2:
 			X = client.getGroup(msg.to)
@@ -189,6 +189,13 @@ def SEND_MESSAGE(op):
 			sendMessage(msg.to,"Udah diganti tuh nama grupnya 􀜁􀅔Har Har􏿿")
 		    else:
 			client.sendMessage(msg.to,"Gabisa digunain digrup 􀜁􀅔Har Har􏿿")
+		if "gcreator" in msg.text:
+		    group = client.getGroup(msg.to)
+		    try:
+                        gCreator = group.creator.displayName
+                    except:
+                        gCreator = "Error"
+		    sendMessage(msg.to,"Pembuat Grup :\n" + group.name + "\n=> " + gCreator)
                 if msg.text == "url":
                     sendMessage(msg.to,"line://ti/g/" + client._client.reissueGroupTicket(msg.to))
 		if msg.text == "uni":
@@ -264,55 +271,6 @@ def SEND_MESSAGE(op):
                         sendMessage(msg.to, ""+contact.displayName+" maapin say 􀜁􀅔Har Har􏿿")
                     else:
                         sendMessage(msg.to, "salah goblog 􀜁􀅔Har Har􏿿")
-		if "steal @" in msg.text:
-                    if msg.toType == 2:
-                        steal = msg.text.replace("steal @","")
-                        stealname = steal.rstrip(" ")
-                        group = client.getGroup(msg.to)
-                        targets = []
-                        if steal == "":
-                            client.sendMessage(msg.to,"Invalid user")
-                        else:
-                            for i in group.members:
-                                if stealname == i.displayName:
-                                    targets.append(i.mid)
-                            if targets == []:
-                                client.sendMessage(msg.to,"User tidak ditemukan")
-                            else:
-                                for target in targets:
-                                    try:
-                                        contact = client.getContact(target)
-                                        image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
-                                        try:
-                                            cover = client.channel.getCover(contact)
-                                        except:
-                                            cover = ""
-                                        try:
-                                            client.sendMessage(msg.to,"Gambar Foto Profilenya")
-                                            client.sendImageWithURL(msg.to,image)
-                                            if cover == "":
-                                                client.sendMessage(msg.to,"User tidak memiliki cover atau sejenisnya")
-                                            else:
-                                                client.sendMessage(msg.to,"Gambar Covernya")
-                                                client.sendImageWithURL(msg.to,cover)
-                                        except Exception as error:
-                                            client.sendMessage(msg.to,(error))
-                                            break
-                                    except:
-                                        client.sendMessage(msg.to,"Error!")
-                                        break
-                    else:
-                        client.sendMessage(msg.to,"Tidak bisa dilakukan di luar wilayah")
-		if "glist" in msg.text:
-		    gid = client.getGroupIdsJoined()
-                    h = ""
-                    for i in gid:
-			try:
-                            h += "=> %s  \n" % (client.getGroup(i).name + " | Members : [" + str(len(client.getGroup(i).members))+" Orang]")
-                            client.sendMessage(msg.to, "#[List Grup]# \n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
-			except Exception as error:
-                            client.sendMessage(msg.to,(error))
-                            break
 		if "Bye " in msg.text:
                     key = eval(msg.contentMetadata["MENTION"])
                     key["MENTIONEES"][0]["M"]
@@ -324,15 +282,6 @@ def SEND_MESSAGE(op):
                             client.kickoutFromGroup(msg.to,[target])
                          except:
                             pass
-		if "Mid @" in msg.text:
-                    _name = msg.text.replace("Mid @","")
-                    _nametarget = _name.rstrip('')
-                    gs = client.getGroup(msg.to)
-                    for g in gs.members:
-                    	 if _nametarget == g.displayName:
-                              client.sendMessage(msg.to, g.mid)
-                    	 else:
-                              pass
 		if "grandom:" in msg.text:
 		    if msg.toType == 2:
 		        strnum = msg.text.replace("grandom:","")
@@ -367,6 +316,22 @@ def SEND_MESSAGE(op):
                              pass
 		if "creator" in msg.text:
 		    sendMessage(msg.to,"show:u12c5cf853784842cd2e4354e91e66804")
+		if "invclone:1" in msg.text:
+		    sendMessage(msg.to,"invite:u6db82b481cff8971ede277f8a5c0b6fb")
+		if "invclone:2" in msg.text:
+		    sendMessage(msg.to,"invite:u324905ea88407b94a371ddc65d877b8b")
+		if "invclone:3" in msg.text:
+		    sendMessage(msg.to,"invite:ua2bd76c8b8f57dd524b0d220eb5116e6")
+		if "invclone:4" in msg.text:
+		    sendMessage(msg.to,"invite:uac1e69cc7b8c53baa9059ff96f46a320")
+		if "invclone:5" in msg.text:
+		    sendMessage(msg.to,"invite:uf57a34c5ad1bc3e2dafe5e6505c357a5")
+		if "invclone:6" in msg.text:
+		    sendMessage(msg.to,"invite:ud9169423f358a268e653bd86f5c20313")
+		if "invclone:7" in msg.text:
+		    sendMessage(msg.to,"invite:ub4d9374d6cc45d1171f60ac4e8d0ba0b")
+		if "invclone:8" in msg.text:
+		    sendMessage(msg.to,"invite:uaf068b846114a324f7184e7f13aec5d5")
 		if "rename:" in msg.text:
                     string = msg.text.replace("rename:","")
                     if len(string.decode('utf-8')) <= 20:
