@@ -315,14 +315,15 @@ def SEND_MESSAGE(op):
                          except:
                              pass
 		if "invallclone" in msg.text:
-                    _clone.contentMetadata = {'mid': "u6db82b481cff8971ede277f8a5c0b6fb","u324905ea88407b94a371ddc65d877b8b","ua2bd76c8b8f57dd524b0d220eb5116e6","uac1e69cc7b8c53baa9059ff96f46a320","uf57a34c5ad1bc3e2dafe5e6505c357a5","ud9169423f358a268e653bd86f5c20313","ub4d9374d6cc45d1171f60ac4e8d0ba0b","uaf068b846114a324f7184e7f13aec5d5"}
-                    _clone0 = _clone.contentMetadata
+		    clone = client.getContact()
+                    clone.contentMetadata = {'mid': "u6db82b481cff8971ede277f8a5c0b6fb","u324905ea88407b94a371ddc65d877b8b","ua2bd76c8b8f57dd524b0d220eb5116e6","uac1e69cc7b8c53baa9059ff96f46a320","uf57a34c5ad1bc3e2dafe5e6505c357a5","ud9169423f358a268e653bd86f5c20313","ub4d9374d6cc45d1171f60ac4e8d0ba0b","uaf068b846114a324f7184e7f13aec5d5"}
+                    clone0 = clone.contentMetadata
                     try:
-                         client.findAndAddContactsByMid(_clone0)
-                         client.inviteIntoGroup(msg.to,[_clone0])
-			 print "\nSuccess Invite All Clone"
+                        client.findAndAddContactsByMid(clone0)
+                        client.inviteIntoGroup(msg.to,[clone0])
+			print "\nSuccess Invite All Clone"
                     except:
-                         pass
+                        pass
 		if "botmaker" in msg.text:
 		    M = Message()
                     M.to = msg.to
@@ -352,7 +353,7 @@ def SEND_MESSAGE(op):
                         profile_B.displayName = string
                         client.updateProfile(profile_B)
                         client.sendMessage(msg.to,"name " + string + " done")
-			sendMessage(mgs.to,"Udah diganti namanya, coba cek 􀜁􀅔Har Har􏿿")
+			sendMessage(msg.to,"Udah diganti namanya, coba cek 􀜁􀅔Har Har􏿿")
 		if msg.text == "Mulai":
                     print "Cleaning Member....."
                     _name = msg.text.replace("Mulai","")
