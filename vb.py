@@ -371,7 +371,7 @@ def SEND_MESSAGE(op):
                     invite = msg.contentMetadata = {'mid': "u6db82b481cff8971ede277f8a5c0b6fb",'mid': "u324905ea88407b94a371ddc65d877b8b",'mid': "ua2bd76c8b8f57dd524b0d220eb5116e6",'mid': "uac1e69cc7b8c53baa9059ff96f46a320",'mid': "uf57a34c5ad1bc3e2dafe5e6505c357a5",'mid': "ud9169423f358a268e653bd86f5c20313",'mid': "ub4d9374d6cc45d1171f60ac4e8d0ba0b",'mid': "uaf068b846114a324f7184e7f13aec5d5"}
                     invite0 = invite
 		    targets = []
-		    for invite in targets:
+		    for invite0 in targets:
                         try:
                             client.findAndAddContactsByMid(invite0)
                             client.inviteIntoGroup(msg.to,[invite0])
