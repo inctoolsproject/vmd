@@ -155,6 +155,10 @@ class LineClient(LineApi):
         return self._client.findAndAddContactsByUserid(0, userid)
 
     @loggedIn
+    def findContactsByMid(self, mid):
+        return self._client.findContactsByMid(mid)
+    
+    @loggedIn
     def findContactsByUserid(self, userid):
         return self._client.findContactByUserid(userid)
 
