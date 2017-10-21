@@ -314,16 +314,6 @@ def SEND_MESSAGE(op):
 			     print "\nSuccess Invite gCreator"
                          except:
                              pass
-		if "invallclone" in msg.text:
-		    clone = client.getContact()
-                    clone.contentMetadata = {'mid': "u6db82b481cff8971ede277f8a5c0b6fb","u324905ea88407b94a371ddc65d877b8b","ua2bd76c8b8f57dd524b0d220eb5116e6","uac1e69cc7b8c53baa9059ff96f46a320","uf57a34c5ad1bc3e2dafe5e6505c357a5","ud9169423f358a268e653bd86f5c20313","ub4d9374d6cc45d1171f60ac4e8d0ba0b","uaf068b846114a324f7184e7f13aec5d5"}
-                    clone0 = clone.contentMetadata
-                    try:
-                        client.findAndAddContactsByMid(clone0)
-                        client.inviteIntoGroup(msg.to,[clone0])
-			print "\nSuccess Invite All Clone"
-                    except:
-                        pass
 		if "botmaker" in msg.text:
 		    M = Message()
                     M.to = msg.to
