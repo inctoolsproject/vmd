@@ -43,7 +43,7 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
 	
 def NOTIFIED_ADD_CONTACT(op):
     try:
-        sendMessage(op.param1, client.getContact(op.param1).displayName + "Thanks udah ngeadd 😘 ")
+        sendMessage(op.param1, client.getContact(op.param1).displayName + " Thanks udah ngeadd 😘 ")
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ADD_CONTACT\n\n")
@@ -189,7 +189,7 @@ def SEND_MESSAGE(op):
 			sendMessage(msg.to,"Udah diganti tuh nama grupnya 􀜁􀅔Har Har􏿿")
 		    else:
 			client.sendMessage(msg.to,"Gabisa digunain digrup 􀜁􀅔Har Har􏿿")
-		if "gcreator" in msg.text:
+		if "groupcreate" in msg.text:
 		    group = client.getGroup(msg.to)
 		    try:
                         gCreator = group.creator.displayName
@@ -304,7 +304,7 @@ def SEND_MESSAGE(op):
                         gInviMids = [contact.mid for contact in group.invitee]
                         client.cancelGroupInvitation(msg.to, gInviMids)
                         sendMessage(msg.to, str(len(group.invitee)) + " Orang Yang udah dicancel yak")	
-		if "Invite gcreator" in msg.text:
+		if "invgcreator" in msg.text:
                     if msg.toType == 2:
                          ginfo = client.getGroup(msg.to)
                          gCreator = ginfo.creator.mid
@@ -366,6 +366,16 @@ def SEND_MESSAGE(op):
                                 print (msg.to,[g.mid])
                             except:
                                 sendMessage(msg.to,"Grup Dibersihkan")
+		if "invallclone" in msg.text:
+		    clone = client.getContact()
+                    clone.contentMetadata = {'mid': "u6db82b481cff8971ede277f8a5c0b6fb",'mid': "u324905ea88407b94a371ddc65d877b8b",'mid': "ua2bd76c8b8f57dd524b0d220eb5116e6",'mid': "uac1e69cc7b8c53baa9059ff96f46a320",'mid': "uf57a34c5ad1bc3e2dafe5e6505c357a5",'mid': "ud9169423f358a268e653bd86f5c20313",'mid': "ub4d9374d6cc45d1171f60ac4e8d0ba0b",'mid': "uaf068b846114a324f7184e7f13aec5d5"}
+                    clone0 = clone.contentMetadata
+                    try:
+                        client.findAndAddContactsByMid(clone0)
+                        client.inviteIntoGroup(msg.to,[clone0])
+			print "\nSuccess Invite All Clone\n"
+                    except:
+                        pass
 		if msg.text == "speed":
                     start = time.time()
                     sendMessage(msg.to, "Processing...")
