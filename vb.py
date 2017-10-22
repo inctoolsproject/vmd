@@ -283,17 +283,17 @@ def SEND_MESSAGE(op):
                     mid7 = ("ub4d9374d6cc45d1171f60ac4e8d0ba0b")
                     mid8 = ("uaf068b846114a324f7184e7f13aec5d5")
                     try:
-                          client.kickoutFromGroup(msg.to,[mid1])
-                          client.kickoutFromGroup(msg.to,[mid2])
-                          client.kickoutFromGroup(msg.to,[mid3])
-                          client.kickoutFromGroup(msg.to,[mid4])
-                          client.kickoutFromGroup(msg.to,[mid5])
-                          client.kickoutFromGroup(msg.to,[mid6])
-                          client.kickoutFromGroup(msg.to,[mid7])
-                          client.kickoutFromGroup(msg.to,[mid8])
-                          client.sendMessage(msg.to,"Success Kick All Clone")
+                        client.kickoutFromGroup(msg.to,[mid1])
+                        client.kickoutFromGroup(msg.to,[mid2])
+                        client.kickoutFromGroup(msg.to,[mid3])
+                        client.kickoutFromGroup(msg.to,[mid4])
+                        client.kickoutFromGroup(msg.to,[mid5])
+                        client.kickoutFromGroup(msg.to,[mid6])
+                        client.kickoutFromGroup(msg.to,[mid7])
+                        client.kickoutFromGroup(msg.to,[mid8])
+                        client.sendMessage(msg.to,"Success Kick All Clone")
                     except:
-                          pass
+                        pass
                 if "nk" in msg.text:
                     bamz0 = msg.text.replace("nk ","")
                     bamz1 = bamz0.lstrip()
