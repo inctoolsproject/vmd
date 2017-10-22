@@ -255,7 +255,7 @@ def SEND_MESSAGE(op):
                         client.findAndAddContactsByMid(mid1,mid2,mid3,mid4,mid5,mid6,mid7,mid8)
                         client.inviteIntoGroup(msg.to,[mid1,mid2,mid3,mid4,mid5,mid6,mid7,mid8])
                         client.sendMessage(msg.to,"Success Invite All Clone")
-                     except:
+                    except:
                         pass
                 if "kickallclone" in msg.text:
                     group = client.getGroup(msg.to)
@@ -269,10 +269,10 @@ def SEND_MESSAGE(op):
                     mid7 = ("ub4d9374d6cc45d1171f60ac4e8d0ba0b")
                     mid8 = ("uaf068b846114a324f7184e7f13aec5d5")
                     try:
-                          client.kickoutFromGroup(msg.to,[mid1,mid2,mid3,mid4,mid5,mid6,mid7,mid8])
-                          client.sendMessage(msg.to,"Success Kick All Clone")
+                        client.kickoutFromGroup(msg.to,[mid1,mid2,mid3,mid4,mid5,mid6,mid7,mid8])
+                        client.sendMessage(msg.to,"Success Kick All Clone")
                     except:
-                          pass
+                        pass
                 if "nk" in msg.text:
                     bamz0 = msg.text.replace("nk ","")
                     bamz1 = bamz0.lstrip()
