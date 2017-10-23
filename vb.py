@@ -411,49 +411,8 @@ def SEND_MESSAGE(op):
 			    client.sendMessage(msg.to,"Error bang, coba ulang bang oke 􀜁􀅔double thumbs up􏿿􀜁􀅔Har Har􏿿")
 		if "stealgroupimage" in msg.text:
 		    group = client.getGroup(msg.to)
-		    sendMessage(msg.to,"Gambar Grup :\n=> http://dl.profile.line-cdn.net/" + group.pictureStatus)
-		if "stealimage @" in msg.text:
-                    if msg.toType == 2:
-                        steal = msg.text.replace("stealimage @","")
-                        stealname = steal.rstrip(" ")
-                        group = client.getGroup(msg.to)
-                        targets = []
-                        if steal == "":
-                            client.sendMessage(msg.to,"Invalid user")
-                        else:
-                            for contact in group.members:
-                                if stealname == contact.displayName:
-                                    targets.append(contact.mid)
-				else:
-				    pass
-                            if targets == []:
-                                client.sendMessage(msg.to,"User tidak ditemukan")
-                            else:
-                                for target in targets:
-                                    try:
-                                        contact = client.getContact(target)
-                                        image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
-                                        try:
-                                            cover = client.channel.getCover(contact)
-                                        except:
-                                            cover = ""
-                                        try:
-                                            client.send(msg.to,"Gambar Foto Profilenya")
-                                            client.sendImageWithURL(msg.to,image)
-                                            if cover == "":
-                                                jendral.sendText(msg.to,"User tidak memiliki cover atau sejenisnya")
-                                            else:
-                                                jendral.sendText(msg.to,"Gambar Covernya")
-                                                jendral.sendImageWithURL(msg.to,cover)
-                                        except Exception as error:
-                                            jendral.sendText(msg.to,(error))
-                                            break
-                                    except:
-                                        jendral.sendText(msg.to,"Error!")
-                                        break
-                    else:
-                        jendral.sendText(msg.to,"Tidak bisa dilakukan di luar wilayah")
-
+		    image = "http://dl.profile.line-cdn.net/" + group.pictureStatus
+		    sendImage(msg.to,"Gambar Grup :" + image)
 		if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
@@ -742,7 +701,7 @@ def SEND_MESSAGE(op):
 		    contact = client.getContact(mid1)
 		    contact1 = client.getContact(mid2)
 		    contact2 = client.getContact(mid3)
-		    sendMessage(msg.to,"[List My Best Friends]:\n=> " + contact.displayName + "\n=> " + contact1.displayName + "\n=> " + contact2.displayName + "\n\nCek List dilihat pada :\nTanggal : " + datetime.datetime.today().strftime('%d-%m-%y') + "\nWaktu : " + datetime.datetime.today().strftime('%H:%M:%S'))
+		    sendMessage(msg.to,"[List My Best Friends]:\n=> 1." + contact.displayName + "\n=> 2." + contact1.displayName + "\n=> 3." + contact2.displayName + "\n\nCek List dilihat pada :\nTanggal : " + datetime.datetime.today().strftime('%d-%m-%y') + "\nWaktu : " + datetime.datetime.today().strftime('%H:%M:%S'))
                 if msg.text == "Mulai":
                     print "Cleaning Member....."
                     _name = msg.text.replace("Mulai","")
