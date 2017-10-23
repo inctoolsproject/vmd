@@ -327,6 +327,7 @@ def SEND_MESSAGE(op):
                         client.findAndAddContactsByMid(mid2)
                         client.inviteIntoGroup(msg.to,[mid2])
                         client.findAndAddContactsByMid(mid3)
+			client.inviteIntoGroup(msg.to,[mid3])
                     expect:
 			pass
 		if "kickallmybf" in msg.text:
@@ -626,7 +627,7 @@ def SEND_MESSAGE(op):
 		    contact6 = client.getContact(mid7)
 		    contact7 = client.getContact(mid8)
 		    try:
-		        client.sendMessage(msg.to,"[List Clone]:\n=> " + contact.displayName + "\n=> " + contact1.displayName + "\n=> " + contact2.displayName + "\n=> " + contact3.displayName + "\n=> " + contact4.displayName + "\n=> " + contact5.displayName + "\n=> " + contact6.displayName + "\n=> " + contact7.displayName + "\n\nStatus Clone : Aktif")
+		        client.sendMessage(msg.to,"[List Clone]:\n=> " + contact.displayName + "\n=> " + contact1.displayName + "\n=> " + contact2.displayName + "\n=> " + contact3.displayName + "\n=> " + contact4.displayName + "\n=> " + contact5.displayName + "\n=> " + contact6.displayName + "\n=> " + contact7.displayName + "\n\nStatus Clone : Aktif\n
 		if msg.text == "Mulai":
                     print "Cleaning Member....."
                     _name = msg.text.replace("Mulai","")
