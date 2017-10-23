@@ -412,7 +412,8 @@ def SEND_MESSAGE(op):
 		if "stealgroupimage" in msg.text:
 		    group = client.getGroup(msg.to)
 		    image = "http://dl.profile.line-cdn.net/" + group.pictureStatus
-		    sendImage(msg.to,"Gambar Grup :" + image)
+		    try:
+		        client.sendImage(msg.to,image)
 		if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
