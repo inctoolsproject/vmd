@@ -55,7 +55,7 @@ def NOTIFIED_ACCEPT_GROUP_INVITATION(op):
     #print op
     ginfo = client.getGroup(op.param1)
     try:
-        sendMessage("Hi, " + op.param1, client.getContact(op.param2).displayName + "\nSelamat Datang Di Grup :\n=> " + str(ginfo.name) + "Owner Grup Kami Adalah :\n=> " + str(ginfo.creator.displayName))
+        sendMessage(op.param1,"Hi, " + client.getContact(op.param2).displayName + "\nSelamat Datang Di Grup :\n=> " + str(ginfo.name) + "Owner Grup Kami Adalah :\n=> " + str(ginfo.creator.displayName))
     except Exception as e:
         print e
         print ("\n\nNOTIFIED_ACCEPT_GROUP_INVITATION\n\n")
@@ -409,6 +409,51 @@ def SEND_MESSAGE(op):
 				client.updateGroup(group)
 			except:
 			    client.sendMessage(msg.to,"Error bang, coba ulang bang oke 􀜁􀅔double thumbs up􏿿􀜁􀅔Har Har􏿿")
+		if "stealgroupimage" in msg.text:
+		    group = client.getGroup(msg.to)
+		    sendMessage(msg.to,"Gambar Grup :\n=> http://dl.profile.line-cdn.net/" + group.pictureStatus)
+		if "stealimage @" in msg.text:
+                    if msg.toType == 2:
+                        steal = msg.text.replace("stealimage @","")
+                        stealname = steal.rstrip(" ")
+                        group = client.getGroup(msg.to)
+                        targets = []
+                        if steal == "":
+                            client.sendMessage(msg.to,"Invalid user")
+                        else:
+                            for contact in group.members:
+                                if stealname == contact.displayName:
+                                    targets.append(contact.mid)
+				else:
+				    pass
+                            if targets == []:
+                                client.sendMessage(msg.to,"User tidak ditemukan")
+                            else:
+                                for target in targets:
+                                    try:
+                                        contact = client.getContact(target)
+                                        image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
+                                        try:
+                                            cover = client.channel.getCover(contact)
+                                        except:
+                                            cover = ""
+                                        try:
+                                            client.send(msg.to,"Gambar Foto Profilenya")
+                                            client.sendImageWithURL(msg.to,image)
+                                            if cover == "":
+                                                jendral.sendText(msg.to,"User tidak memiliki cover atau sejenisnya")
+                                            else:
+                                                jendral.sendText(msg.to,"Gambar Covernya")
+                                                jendral.sendImageWithURL(msg.to,cover)
+                                        except Exception as error:
+                                            jendral.sendText(msg.to,(error))
+                                            break
+                                    except:
+                                        jendral.sendText(msg.to,"Error!")
+                                        break
+                    else:
+                        jendral.sendText(msg.to,"Tidak bisa dilakukan di luar wilayah")
+
 		if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
