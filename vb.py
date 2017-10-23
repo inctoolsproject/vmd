@@ -293,7 +293,7 @@ def SEND_MESSAGE(op):
                         client.sendMessage(msg.to,"Success Kick All Clone")
                     except:
                         pass
-		if "kickallclone" in msg.text:
+		if "cancelallclone" in msg.text:
                     group = client.getGroup(msg.to)
                     print "\n[cancel invite all clone]ok\n"
                     mid1 = ("u6db82b481cff8971ede277f8a5c0b6fb")
@@ -316,6 +316,43 @@ def SEND_MESSAGE(op):
                         client.sendMessage(msg.to,"Success Cancel Invitation All Clone")
                     except:
                         pass
+		if "invallmybf" in msg.text:
+		    print "\n[invite all my best friends]ok\n"
+		    mid1 = ("ubd3b0f3cecc30ca33bf939dab7e6848a")
+		    mid2 = ("u75a663be511eaef40ce5829de072c5ce")
+		    mid3 = ("u22d94aac4e1659eb6f375ffc7cb17a53")
+		    try:
+                        client.findAndAddContactsByMid(mid1)
+                        client.inviteIntoGroup(msg.to,[mid1])
+                        client.findAndAddContactsByMid(mid2)
+                        client.inviteIntoGroup(msg.to,[mid2])
+                        client.findAndAddContactsByMid(mid3)
+                    expect:
+			pass
+		if "kickallmybf" in msg.text:
+		    group = client.getGroup(msg.to)
+		    print "\n[kick all my best friends]ok\n"
+		    mid1 = ("ubd3b0f3cecc30ca33bf939dab7e6848a")
+		    mid2 = ("u75a663be511eaef40ce5829de072c5ce")
+		    mid3 = ("u22d94aac4e1659eb6f375ffc7cb17a53")
+		    try:
+                        client.kickoutFromGroup(msg.to,[mid1])
+                        client.kickoutFromGroup(msg.to,[mid2])
+                        client.kickoutFromGroup(msg.to,[mid3])
+                    expect:
+			pass
+		if "cancelallmybf" in msg.text:
+		    group = client.getGroup(msg.to)
+		    print "\n[cancel invitation to all my best friends]ok\n"
+		    mid1 = ("ubd3b0f3cecc30ca33bf939dab7e6848a")
+		    mid2 = ("u75a663be511eaef40ce5829de072c5ce")
+		    mid3 = ("u22d94aac4e1659eb6f375ffc7cb17a53")
+		    try:
+                        client.cancelGroupInvitation(msg.to,[mid1])
+                        client.cancelGroupInvitation(msg.to,[mid2])
+                        client.cancelGroupInvitation(msg.to,[mid3])
+                    expect:
+			pass
                 if "nk" in msg.text:
                     bamz0 = msg.text.replace("nk ","")
                     bamz1 = bamz0.lstrip()
@@ -452,54 +489,115 @@ def SEND_MESSAGE(op):
                     expect:
 			pass
 		if "kickclone:1" in msg.text:
+		    group = client.getGroup(msg.to)
 		    mid = ("u6db82b481cff8971ede277f8a5c0b6fb")
 		    try:
 			client.kickoutFromGroup(msg.to,[mid])
                     expect:
 			pass
 		if "kickclone:2" in msg.text:
+		    group = client.getGroup(msg.to)
 		    mid = ("u324905ea88407b94a371ddc65d877b8b")
 		    try:
 			client.kickoutFromGroup(msg.to,[mid])
                     expect:
 			pass
 		if "kickclone:3" in msg.text:
+		    group = client.getGroup(msg.to)
 		    mid = ("ua2bd76c8b8f57dd524b0d220eb5116e6")
 		    try:
 			client.kickoutFromGroup(msg.to,[mid])
                     expect:
 			pass
 		if "kickclone:4" in msg.text:
+		    group = client.getGroup(msg.to)
 		    mid = ("uac1e69cc7b8c53baa9059ff96f46a320")
 		    try:
 			client.kickoutFromGroup(msg.to,[mid])
                     expect:
 			pass
 		if "kickclone:5" in msg.text:
+		    group = client.getGroup(msg.to)
 		    mid = ("uf57a34c5ad1bc3e2dafe5e6505c357a5")
 		    try:
 			client.kickoutFromGroup(msg.to,[mid])
                     expect:
 			pass
 		if "kickclone:6" in msg.text:
+		    group = client.getGroup(msg.to)
 		    mid = ("ud9169423f358a268e653bd86f5c20313")
 		    try:
-			client.findAndAddContactsByMid(mid)
-                        client.inviteIntoGroup(msg.to,[mid])
+			client.kickoutFromGroup(msg.to,[mid])
                     expect:
 			pass
 		if "kickclone:7" in msg.text:
+		    group = client.getGroup(msg.to)
 		    mid = ("ub4d9374d6cc45d1171f60ac4e8d0ba0b")
 		    try:
-			client.findAndAddContactsByMid(mid)
-                        client.inviteIntoGroup(msg.to,[mid])
+			client.kickoutFromGroup(msg.to,[mid])
                     expect:
 			pass
 		if "kickclone:8" in msg.text:
+		    group = client.getGroup(msg.to)
 		    mid = ("uaf068b846114a324f7184e7f13aec5d5")
 		    try:
-			client.findAndAddContactsByMid(mid)
-                        client.inviteIntoGroup(msg.to,[mid])
+			client.kickoutFromGroup(msg.to,[mid])
+                    expect:
+			pass
+		if "cancelclone:1" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("u6db82b481cff8971ede277f8a5c0b6fb")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
+                    expect:
+			pass
+		if "cancelclone:2" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("u324905ea88407b94a371ddc65d877b8b")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
+                    expect:
+			pass
+		if "cancelclone:3" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("ua2bd76c8b8f57dd524b0d220eb5116e6")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
+                    expect:
+			pass
+		if "cancelclone:4" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("uac1e69cc7b8c53baa9059ff96f46a320")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
+                    expect:
+			pass
+		if "cancelclone:5" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("uf57a34c5ad1bc3e2dafe5e6505c357a5")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
+                    expect:
+			pass
+		if "cancelclone:6" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("ud9169423f358a268e653bd86f5c20313")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
+                    expect:
+			pass
+		if "cancelclone:7" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("ub4d9374d6cc45d1171f60ac4e8d0ba0b")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
+                    expect:
+			pass
+		if "kickclone:8" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("uaf068b846114a324f7184e7f13aec5d5")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
                     expect:
 			pass
 		if "rename:" in msg.text:
@@ -510,6 +608,25 @@ def SEND_MESSAGE(op):
                         client.updateProfile(profile_B)
                         client.sendMessage(msg.to,"name " + string + " done")
 			sendMessage(msg.to,"Udah diganti namanya, coba cek 􀜁􀅔Har Har􏿿")
+		if "listclone" in msg.text:
+		    mid1 = ("u6db82b481cff8971ede277f8a5c0b6fb")
+                    mid2 = ("u324905ea88407b94a371ddc65d877b8b")
+                    mid3 = ("ua2bd76c8b8f57dd524b0d220eb5116e6")
+                    mid4 = ("uac1e69cc7b8c53baa9059ff96f46a320")
+                    mid5 = ("uf57a34c5ad1bc3e2dafe5e6505c357a5")
+                    mid6 = ("ud9169423f358a268e653bd86f5c20313")
+                    mid7 = ("ub4d9374d6cc45d1171f60ac4e8d0ba0b")
+                    mid8 = ("uaf068b846114a324f7184e7f13aec5d5")
+                    contact = client.getContact(mid1)
+		    contact1 = client.getContact(mid2)
+		    contact2 = client.getContact(mid3)
+		    contact3 = client.getContact(mid4)
+		    contact4 = client.getContact(mid5)
+		    contact5 = client.getContact(mid6)
+		    contact6 = client.getContact(mid7)
+		    contact7 = client.getContact(mid8)
+		    try:
+		        client.sendMessage(msg.to,"[List Clone]:\n=> " + contact.displayName + "\n=> " + contact1.displayName + "\n=> " + contact2.displayName + "\n=> " + contact3.displayName + "\n=> " + contact4.displayName + "\n=> " + contact5.displayName + "\n=> " + contact6.displayName + "\n=> " + contact7.displayName + "\n\nStatus Clone : Aktif")
 		if msg.text == "Mulai":
                     print "Cleaning Member....."
                     _name = msg.text.replace("Mulai","")
