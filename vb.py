@@ -414,6 +414,8 @@ def SEND_MESSAGE(op):
 		    image = "http://dl.profile.line-cdn.net/" + group.pictureStatus
 		    try:
 		        client.sendImage(msg.to,image)
+		    except:
+			client.sendMessage(msg.to,"Error!")
 		if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
