@@ -179,7 +179,7 @@ def SEND_MESSAGE(op):
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang" + "\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if "help" in msg.text:
-	       	    sendMessage(msg.to,"\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\n-----------------------------------------------------------------\n「Help Command [Base Command] :」\n=> [seţ]\n=> [siďer]\n=> [ʍe]\n=> [ʍid]\n=> [ǥid]\n=> [ǥinfo]\n=> [ǥroupȼreate]\n=> [ţime]\n=> [þuka]\n=> [ţutup]\n=> [µrl]\n=> [ǥift]\n=> [ȼancel]\n=> [ɨnvite:「By Mid」]\n=> [ȿhow:「By Mid」\n\n「Help Command  [Mod Command] :」\n=> [ǥrandom:「Nomor」]\n=> [μp]\n=> [ȿpeed]\n=> [ţagall]\n=> [Ğn 「Nama」]\n=> [ɨnvȼlone:「No.1-8」]\n=> [ɨnvǥȼreator]\n=> [яename:「Ganti Nama Profil」]\n=> [вσтмαкєя]\n\n「Help Command  [Use For Kicker Only] :」\n=> [к:「By Name」]\n=> [ик「By Tag」]\n=> [мulai]\n=> [µni]\n=> [вye「By Tag」]\n\n「Info Bots :」\n=> Based on : Vodka\n=> Support By : Line Developers\n=> Modding By : Bamzky\n=> Version Mod : 2.2.1beta\n-----------------------------------------------------------------\n\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
+	       	    sendMessage(msg.to,"\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n\n-----------------------------------------------------------------\n「Help Command [Base Command] :」\n=> [seţ]\n=> [siďer]\n=> [ʍe]\n=> [ʍid]\n=> [ǥid]\n=> [ǥinfo]\n=> [ǥroupȼreate]\n=> [ţime]\n=> [þuka]\n=> [ţutup]\n=> [µrl]\n=> [ǥift]\n=> [ȼancel]\n=> [ɨnvite:「By Mid」]\n=> [ȿhow:「By Mid」\n\n「Help Command  [Clone/MyBF Command] :」\n\n\n「Help Command [Mod Command] :」\n=> [ǥrandom:「Nomor」]\n=> [μp]\n=> [ȿpeed]\n=> [ţagall]\n=> [Ğn 「Nama」]\n=> [ɨnvȼlone:「No.1-8」]\n=> [ɨnvǥȼreator]\n=> [яename:「Ganti Nama Profil」]\n=> [вσтмαкєя]\n\n「Help Command  [Use For Kicker Only] :」\n=> [к:「By Name」]\n=> [ик「By Tag」]\n=> [мulai]\n=> [µni]\n=> [вye「By Tag」]\n\n「Info Bots :」\n=> Based on : Vodka\n=> Support By : Line Developers\n=> Modding By : Bamzky\n=> Version Mod : 2.2.1beta\n-----------------------------------------------------------------\n\n              Ḷ̩̼̝̺̘͖ͩͨ͛ͬ̇̎Ì̢͕̪̮̤̻̠̬͂̉Ň̵̪̙͊͐̿ͧE̸̖̯̗̥͍̳̻̳ͤͬͥͨ̑̄ͮ ̓̍ͣͣͮ҉̝͇͓̱͙D̼̪̿̉̔̈́ͥͨ͟Ḛ̡̫̮͔͓̫̈̄̊̌̎̀̋͟V͚̬͕̝̣͍͇̲͖̉̓͋ͨ̚͢͞E͓ͪ̐̿̇̃͋̂͗L͚̦̝̎̄̾́͠O̵͎̹̻̘̒͂̌̾͒͒̇̀P̷͖̬̲͕̖͍ͤ͒ͮ̿̌̕ͅE͈̖͉͖̻̒́̆͒̓̋ͣͅR̷̭͚̯̔ͤ͂ͧ̇͟S̵̺̞͓̥̖͍͈ͩ̌̌̾̀̔͒͑ ̷̢̧̥͎̯̀̆͌B̶̛͎̹̯̎̏ͯ̀̓̉͒͐̈́͜Ō͗̈́͋ͯͭ͠҉͏͈̘͔̙̱̯̥̯͉T͕̹̲̱̱̠̜̃͋ͧ̂̌̆ͫ͒̒͠S͖ͨ̓̾̂\n")
 		if "Gn " in msg.text:
 		    if msg.toType == 2:
 			X = client.getGroup(msg.to)
@@ -594,9 +594,72 @@ def SEND_MESSAGE(op):
 			client.cancelGroupInvitation(msg.to,[mid])
                     expect:
 			pass
-		if "kickclone:8" in msg.text:
+		if "cancelclone:8" in msg.text:
 		    group = client.getGroup(msg.to)
 		    mid = ("uaf068b846114a324f7184e7f13aec5d5")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
+                    expect:
+			pass
+		if "invmybf:1" in msg.text:
+		    mid = ("ubd3b0f3cecc30ca33bf939dab7e6848a")
+		    try:
+			client.findAndAddContactsByMid(mid)
+                        client.inviteIntoGroup(msg.to,[mid])
+                    expect:
+			pass
+		if "invmybf:2" in msg.text:
+		    mid = ("u75a663be511eaef40ce5829de072c5ce")
+		    try:
+			client.findAndAddContactsByMid(mid)
+                        client.inviteIntoGroup(msg.to,[mid])
+                    expect:
+			pass
+		if "invmybf:3" in msg.text:
+		    mid = ("u22d94aac4e1659eb6f375ffc7cb17a53")
+		    try:
+			client.findAndAddContactsByMid(mid)
+                        client.inviteIntoGroup(msg.to,[mid])
+                    expect:
+			pass
+		if "kickmybf:1" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("ubd3b0f3cecc30ca33bf939dab7e6848a")
+		    try:
+			client.kickoutFromGroup(msg.to,[mid])
+                    expect:
+			pass
+		if "kickmybf:2" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("u75a663be511eaef40ce5829de072c5ce")
+		    try:
+			client.kickoutFromGroup(msg.to,[mid])
+                    expect:
+			pass
+		if "kickmybf:3" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("u22d94aac4e1659eb6f375ffc7cb17a53")
+		    try:
+			client.kickoutFromGroup(msg.to,[mid])
+                    expect:
+			pass
+		if "cancelmybf:1" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("ubd3b0f3cecc30ca33bf939dab7e6848a")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
+                    expect:
+			pass
+		if "cancelmybf:2" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("u75a663be511eaef40ce5829de072c5ce")
+		    try:
+			client.cancelGroupInvitation(msg.to,[mid])
+                    expect:
+			pass
+		if "cancelmybf:3" in msg.text:
+		    group = client.getGroup(msg.to)
+		    mid = ("u22d94aac4e1659eb6f375ffc7cb17a53")
 		    try:
 			client.cancelGroupInvitation(msg.to,[mid])
                     expect:
@@ -627,7 +690,20 @@ def SEND_MESSAGE(op):
 		    contact6 = client.getContact(mid7)
 		    contact7 = client.getContact(mid8)
 		    try:
-		        client.sendMessage(msg.to,"[List Clone]:\n=> " + contact.displayName + "\n=> " + contact1.displayName + "\n=> " + contact2.displayName + "\n=> " + contact3.displayName + "\n=> " + contact4.displayName + "\n=> " + contact5.displayName + "\n=> " + contact6.displayName + "\n=> " + contact7.displayName + "\n\nStatus Clone : Aktif\n
+		        client.sendMessage(msg.to,"[List Clone]:\n=> 1." + contact.displayName + "\n=> 2." + contact1.displayName + "\n=> 3." + contact2.displayName + "\n=> 4." + contact3.displayName + "\n=> 5." + contact4.displayName + "\n=> 6." + contact5.displayName + "\n=> 7." + contact6.displayName + "\n=> 8." + contact7.displayName + "\n\nStatus Clone : Aktif\nStatus diambil pada :\nTanggal : " + datetime.datetime.today().strftime('%d-%m-%y') + "\nWaktu : " + datetime.datetime.today().strftime('%H:%M:%S'))
+		    expect:
+			pass
+		if "listmybf" in msg.text:
+		    mid1 = ("ubd3b0f3cecc30ca33bf939dab7e6848a")
+		    mid2 = ("u75a663be511eaef40ce5829de072c5ce")
+		    mid3 = ("u22d94aac4e1659eb6f375ffc7cb17a53")
+		    contact = client.getContact(mid1)
+		    contact1 = client.getContact(mid2)
+		    contact2 = client.getContact(mid3)
+		    try:
+                        client.sendMessage(msg.to,"[List My Best Friends]:\n=> " + contact.displayName + "\n=> " + contact1.displayName + "\n=> " + contact2.displayName + "\n\nCek List dilihat pada :\nTanggal : " + datetime.datetime.today().strftime('%d-%m-%y') + "\nWaktu : " + datetime.datetime.today().strftime('%H:%M:%S'))
+                    expect:
+			pass
 		if msg.text == "Mulai":
                     print "Cleaning Member....."
                     _name = msg.text.replace("Mulai","")
