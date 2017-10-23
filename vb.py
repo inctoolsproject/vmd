@@ -689,10 +689,7 @@ def SEND_MESSAGE(op):
 		    contact5 = client.getContact(mid6)
 		    contact6 = client.getContact(mid7)
 		    contact7 = client.getContact(mid8)
-		    try:
-		        client.sendMessage(msg.to,"[List Clone]:\n=> 1." + contact.displayName + "\n=> 2." + contact1.displayName + "\n=> 3." + contact2.displayName + "\n=> 4." + contact3.displayName + "\n=> 5." + contact4.displayName + "\n=> 6." + contact5.displayName + "\n=> 7." + contact6.displayName + "\n=> 8." + contact7.displayName + "\n\nStatus Clone : Aktif\nStatus diambil pada :\nTanggal : " + datetime.datetime.today().strftime('%d-%m-%y') + "\nWaktu : " + datetime.datetime.today().strftime('%H:%M:%S'))
-		    except:
-			pass
+		    sendMessage(msg.to,"[List Clone]:\n=> 1." + contact.displayName + "\n=> 2." + contact1.displayName + "\n=> 3." + contact2.displayName + "\n=> 4." + contact3.displayName + "\n=> 5." + contact4.displayName + "\n=> 6." + contact5.displayName + "\n=> 7." + contact6.displayName + "\n=> 8." + contact7.displayName + "\n\nStatus Clone : Aktif\nStatus diambil pada :\nTanggal : " + datetime.datetime.today().strftime('%d-%m-%y') + "\nWaktu : " + datetime.datetime.today().strftime('%H:%M:%S'))
 		if "listmybf" in msg.text:
 		    mid1 = ("ubd3b0f3cecc30ca33bf939dab7e6848a")
 		    mid2 = ("u75a663be511eaef40ce5829de072c5ce")
@@ -700,11 +697,8 @@ def SEND_MESSAGE(op):
 		    contact = client.getContact(mid1)
 		    contact1 = client.getContact(mid2)
 		    contact2 = client.getContact(mid3)
-		    try:
-                        client.sendMessage(msg.to,"[List My Best Friends]:\n=> " + contact.displayName + "\n=> " + contact1.displayName + "\n=> " + contact2.displayName + "\n\nCek List dilihat pada :\nTanggal : " + datetime.datetime.today().strftime('%d-%m-%y') + "\nWaktu : " + datetime.datetime.today().strftime('%H:%M:%S'))
-                    except:
-			pass
-		if msg.text == "Mulai":
+		    sendMessage(msg.to,"[List My Best Friends]:\n=> " + contact.displayName + "\n=> " + contact1.displayName + "\n=> " + contact2.displayName + "\n\nCek List dilihat pada :\nTanggal : " + datetime.datetime.today().strftime('%d-%m-%y') + "\nWaktu : " + datetime.datetime.today().strftime('%H:%M:%S'))
+                if msg.text == "Mulai":
                     print "Cleaning Member....."
                     _name = msg.text.replace("Mulai","")
                     gs = client.getGroup(msg.to)
