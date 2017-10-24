@@ -409,9 +409,9 @@ def SEND_MESSAGE(op):
 				client.updateGroup(group)
 			except:
 			    client.sendMessage(msg.to,"Error bang, coba ulang bang oke 􀜁􀅔double thumbs up􏿿􀜁􀅔Har Har􏿿")
-		if "gmid" in msg.text:
+		if "gid" in msg.text:
 		    group = client.getGroup(msg.to)
-		    sendMessage(msg.to,group)
+		    sendMessage(msg.to, group.id)
 		if "stealgroupimage" in msg.text:
 		    group = client.getGroup(msg.to)
 		    sendMessage(msg.to,"http://dl.profile.line-cdn.net/" + group.pictureStatus)
@@ -686,22 +686,6 @@ def SEND_MESSAGE(op):
                             client.sendMessage(msg.to, tulisan)
                         else:
                             client.sendMessage(msg.to, "Kelebihan batas :v")
-		if "stalk " in msg.text:
-                    print "[Command]Stalk executing"
-                    stalkID = msg.text.replace("stalk ","")
-                    subprocess.call(["instaLooter",stalkID,"tmp/","-n","1"])   
-                    files = glob.glob("tmp/*.jpg")
-                    for file in files:
-                        os.rename(file,"tmp/tmp.jpg")
-                        fileTmp = glob.glob("tmp/tmp.jpg")
-                    if not fileTmp:
-                        client.sendMessage(msg.to, "Image not found, maybe the account haven't post a single picture or the account is private")
-                        print "[Command]Stalk,executed - no image found"
-                    else:
-                        image = upload_tempimage(client)
-                        client.sendMessage(msg.to, format(image['link']))
-                        subprocess.call(["sudo","rm","-rf","tmp/tmp.jpg"])
-                        print "[Command]Stalk executed - succes"
 		if "rename:" in msg.text:
                     string = msg.text.replace("rename:","")
                     if len(string.decode('utf-8')) <= 20:
