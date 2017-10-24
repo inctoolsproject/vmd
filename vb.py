@@ -411,11 +411,7 @@ def SEND_MESSAGE(op):
 			    client.sendMessage(msg.to,"Error bang, coba ulang bang oke 􀜁􀅔double thumbs up􏿿􀜁􀅔Har Har􏿿")
 		if "stealgroupimage" in msg.text:
 		    group = client.getGroup(msg.to)
-		    image = "http://dl.profile.line-cdn.net/" + group.pictureStatus
-		    try:
-		        client.sendImage(msg.to,image)
-		    except:
-			client.sendMessage(msg.to,"Error!")
+		    sendMessage(msg.to,"http://dl.profile.line-cdn.net/" + group.pictureStatus)
 		if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
@@ -681,7 +677,7 @@ def SEND_MESSAGE(op):
                            for x in range(jmlh):
                                client.sendMessage(msg.to, teks)
                         else:
-                            client.sendMessage(msg.to, "Kelebihan batas:v")
+                           client.sendMessage(msg.to, "Kelebihan batas:v")
                     if txt[1] == "off":
                         if jmlh <= 300:
                             client.sendMessage(msg.to, tulisan)
@@ -720,7 +716,16 @@ def SEND_MESSAGE(op):
                             client.findAndAddContactsByMid(msg.from_)
                             client.inviteIntoGroup(gid,[msg.from_])
                         except:
-                            client.sendMessage(msg.to,"Mungkin saya tidak di dalaam grup itu")
+                            client.sendMessage(msg.to,"Mungkin saya tidak di dalam grup itu")
+		if "Mid @" in msg.text:
+                    _name = msg.text.replace("Mid @","")
+                    _nametarget = _name.rstrip(' ')
+                    gs = cl.getGroup(msg.to)
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            client.sendMessage(msg.to, g.mid)
+                        else:
+                            pass
 		if "listclone" in msg.text:
 		    mid1 = ("u6db82b481cff8971ede277f8a5c0b6fb")
                     mid2 = ("u324905ea88407b94a371ddc65d877b8b")
