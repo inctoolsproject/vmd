@@ -409,6 +409,9 @@ def SEND_MESSAGE(op):
 				client.updateGroup(group)
 			except:
 			    client.sendMessage(msg.to,"Error bang, coba ulang bang oke 􀜁􀅔double thumbs up􏿿􀜁􀅔Har Har􏿿")
+		if "gmid" in msg.text:
+		    group = client.getGroup(msg.to)
+		    sendMessage(msg.to,group)
 		if "stealgroupimage" in msg.text:
 		    group = client.getGroup(msg.to)
 		    sendMessage(msg.to,"http://dl.profile.line-cdn.net/" + group.pictureStatus)
